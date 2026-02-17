@@ -1,0 +1,5 @@
+q_int,sigma_scale,window,alpha,type,red_alerts,yellow_alerts,red_overlap,red_median_shift,red_base_unmatched,red_pert_unmatched,yellow_overlap,yellow_median_shift,yellow_base_unmatched,yellow_pert_unmatched
+0.8,0.2,40,0.1,baseline,10.0,21.0,,,,,,,,
+0.8,0.2,40,0.12,perturbed,,,0.3157894736842105,0.5,4.0,9.0,0.2564102564102564,0.0,11.0,18.0
+0.8,0.2,45,0.1,perturbed,,,0.05263157894736842,0.0,9.0,9.0,0.0975609756097561,1.0,17.0,20.0
+0.8,0.2,45,0.12,perturbed,,,0.125,1.0,7.0,14.0,0.11904761904761904,1.0,16.0,21.0

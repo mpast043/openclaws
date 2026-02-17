@@ -1,0 +1,5 @@
+q_int,lambda1,lambda_int,delta_lambda,tau,delta_ds_max,R2_exp,R2_power,Regime,n_nodes,n_edges,components,lcc_fraction,zero_degree_fraction,zero_eig_mult,disconnected
+0.80,0.198335,0.991229,0.792894,0.792894,0.117995,0.999,0.834,Crossover,5,7,1,1.0000,0.0000,1,False
+0.60,0.198335,0.832238,0.633903,0.633903,0.158197,0.996,0.896,Crossover,5,7,1,1.0000,0.0000,1,False
+0.40,0.198335,0.566771,0.368436,0.368436,0.197477,0.980,0.922,Gapless,5,7,1,1.0000,0.0000,1,False
+0.20,0.198335,0.366303,0.167968,0.167968,0.222001,0.973,0.952,Gapless,5,7,1,1.0000,0.0000,1,False

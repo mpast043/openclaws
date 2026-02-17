@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework v4.5 — Capacity → Geometry Demo</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #d2a8ff;
+    --accent4: #f78166;
+    --danger: #f85149;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  header h1 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  header h1 span { color: var(--accent); }
+  header .subtitle { color: var(--text-muted); font-size: 13px; }
+  .layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    height: calc(100vh - 57px);
+  }
+  .sidebar {
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .main {
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .card h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .form-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .form-row label {
+    font-size: 13px;
+    color: var(--text-muted);
+    min-width: 80px;
+  }
+  .form-row input[type="range"] {
+    flex: 1;
+    accent-color: var(--accent);
+  }
+  .form-row .val {
+    font-size: 13px;
+    font-family: monospace;
+    color: var(--accent);
+    min-width: 42px;
+    text-align: right;
+  }
+  select, input[type="number"] {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  input[type="number"] { width: 70px; }
+  select { width: 100%; }
+  button {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  button:hover { opacity: 0.85; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  button.secondary {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  button.danger { background: var(--danger); }
+  .btn-row { display: flex; gap: 8px; }
+
+  /* Plots */
+  .plot-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+  }
+  .plot-container canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .plots-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Thresholds table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    padding: 6px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th { color: var(--text-muted); font-weight: 500; }
+  td.num { font-family: monospace; color: var(--accent); }
+
+  /* Results list */
+  .result-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.1s;
+  }
+  .result-item:hover { background: rgba(88,166,255,0.08); }
+  .result-item.active { background: rgba(88,166,255,0.15); }
+  .result-item .meta { flex: 1; }
+  .result-item .meta .label { font-weight: 500; }
+  .result-item .meta .time { color: var(--text-muted); font-size: 11px; }
+  .result-item .del {
+    background: none; border: none; color: var(--text-muted);
+    cursor: pointer; padding: 2px 6px; font-size: 16px;
+  }
+  .result-item .del:hover { color: var(--danger); }
+
+  /* Status */
+  .status-bar {
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 8px 0;
+    min-height: 28px;
+  }
+  .status-bar.computing { color: var(--accent4); }
+  .status-bar.done { color: var(--accent2); }
+
+  /* Info panel */
+  .info-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .info-text code {
+    background: var(--bg);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: var(--accent3);
+  }
+
+  /* Dimension badges */
+  .dim-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: monospace;
+  }
+  .dim-1 { background: rgba(248,129,102,0.2); color: var(--accent4); }
+  .dim-2 { background: rgba(210,168,255,0.2); color: var(--accent3); }
+  .dim-3 { background: rgba(88,166,255,0.2); color: var(--accent); }
+  .dim-4 { background: rgba(63,185,80,0.2); color: var(--accent2); }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+  }
+  .empty-state p { margin-top: 8px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Framework v4.5 <span>Capacity → Geometry</span></h1>
+  <div class="subtitle">Same substrate, different capacity → different effective dimension</div>
+</header>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="card">
+      <h2>Lattice Configuration</h2>
+      <div class="form-row">
+        <label>Dimension D</label>
+        <select id="inp-D">
+          <option value="1">1D (chain)</option>
+          <option value="2">2D (square)</option>
+          <option value="3" selected>3D (cubic)</option>
+          <option value="4">4D (hypercubic)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Side length N</label>
+        <input type="number" id="inp-N" value="64" min="8" max="256" step="4">
+      </div>
+      <div class="form-row">
+        <label>Sites</label>
+        <span id="lbl-sites" class="val">262144</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Capacity Filter</h2>
+      <div class="form-row">
+        <label>C_geo range</label>
+      </div>
+      <div class="form-row">
+        <label style="min-width:40px">Min</label>
+        <input type="range" id="inp-Cmin" min="0.01" max="0.5" step="0.01" value="0.05">
+        <span id="lbl-Cmin" class="val">0.05</span>
+      </div>
+      <div class="form-row">
+        <label style="min-width:40px">Max</label>
+        <input type="range" id="inp-Cmax" min="0.5" max="1.0" step="0.01" value="1.00">
+        <span id="lbl-Cmax" class="val">1.00</span>
+      </div>
+      <div class="form-row">
+        <label>C_int</label>
+        <input type="range" id="inp-Cint" min="0.1" max="2.0" step="0.1" value="1.0">
+        <span id="lbl-Cint" class="val">1.0</span>
+      </div>
+      <div class="form-row">
+        <label>Steps</label>
+        <input type="number" id="inp-steps" value="30" min="5" max="60" step="5">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Diffusion Range</h2>
+      <div class="form-row">
+        <label>σ_min</label>
+        <input type="number" id="inp-smin" value="0.1" min="0.01" max="5" step="0.1">
+      </div>
+      <div class="form-row">
+        <label>σ_max</label>
+        <input type="number" id="inp-smax" value="200" min="10" max="1000" step="10">
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button id="btn-run" style="flex:1">Run Scan</button>
+    </div>
+    <div id="status" class="status-bar">Ready</div>
+
+    <div class="card">
+      <h2>Saved Results</h2>
+      <div id="results-list"></div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <!-- Quick info -->
+    <div class="card">
+      <h2>What This Demonstrates</h2>
+      <div class="info-text">
+        <strong>Framework v4.5 demo (capacity-only within a scan):</strong>
+        For a fixed substrate (a <em>D</em>-dimensional periodic cubic lattice),
+        the measured effective geometry (spectral dimension) changes when we sweep only
+        the observational capacity <code>C_geo</code>.
+        All other quantities are held fixed <em>for that scan</em> (same <code>D</code>, <code>N</code>,
+        &sigma; grid, derivative estimator, and plateau window).<br><br>
+
+        <strong>Model:</strong>
+        We define a nominal capacity budget <code>d_nom = C_geo &times; D</code> and per-dimension
+        weights <code>w_d = clamp(d_nom &minus; (d&minus;1), 0, 1)</code>.
+        Capacity acts by scaling each dimension's Laplacian contribution:
+        <code>&lambda;(k) = &Sigma;_d w_d &times; 2(1&minus;cos(2&pi;k_d/N))</code>.
+        This makes the return probability factorize exactly:
+        <code>P(&sigma;) = &Pi;_d P_1D(w_d &sigma;)</code>, and we compute
+        <code>d_s(&sigma;) = &minus;2 d(ln P)/d(ln &sigma;)</code> on log&ndash;log axes.<br><br>
+
+        <strong>Expected behavior:</strong>
+        At full capacity (<code>C_geo=1</code>), the plateau gives <code>d_s &asymp; D</code>
+        (within finite-size/discretization error).
+        As <code>C_geo</code> crosses thresholds near <code>k/D</code>, additional dimensions
+        turn on and <code>d_s</code> shows an approximately staircase-like increase with smooth transitions
+        near each threshold.<br><br>
+
+        <strong>UI note:</strong>
+        Controls like <code>D</code>, <code>N</code>, and <code>&sigma;_min/&sigma;_max</code> set the fixed configuration
+        for a scan. Only <code>C_geo</code> varies across the sweep.
+        <span style="color:var(--text-muted)">(If <code>C_int</code> is enabled, it only affects how capacity
+        steps are spaced; it does not change the capacity filter itself.)</span>
+      </div>
+    </div>
+
+    <!-- Dimension summary -->
+    <div class="card" id="summary-card" style="display:none">
+      <h2>Dimension Summary</h2>
+      <div id="dim-summary"></div>
+    </div>
+
+    <!-- Plots -->
+    <div class="plots-grid">
+      <div class="card">
+        <h2>d_s vs C_geo (Plateau Values)</h2>
+        <div class="plot-container">
+          <canvas id="chart-ds-vs-c"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <h2>d_s(σ) Curves by Capacity</h2>
+        <div class="plot-container">
+          <canvas id="chart-ds-vs-sigma"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Return Probability P(σ)</h2>
+        <div class="plot-container">
+          <canvas id="chart-P-vs-sigma"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Nominal vs Measured Effective Dimension</h2>
+        <div class="plot-container">
+          <canvas id="chart-modes"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thresholds -->
+    <div class="card" id="thresholds-card" style="display:none">
+      <h2>Detected Thresholds</h2>
+      <table>
+        <thead>
+          <tr><th>Target d_s</th><th>C_geo Threshold</th><th>Bracket</th></tr>
+        </thead>
+        <tbody id="thresholds-body"></tbody>
+      </table>
+    </div>
+
+    <!-- Reference data -->
+    <div class="card">
+      <h2>Reference Values (Literature)</h2>
+      <p style="font-size:12px;color:var(--text-muted);margin-bottom:8px">Displayed for context only; not used in computation.</p>
+      <table>
+        <thead>
+          <tr><th>Model</th><th>d_s (UV)</th><th>d_s (IR)</th><th>D</th><th>Source</th></tr>
+        </thead>
+        <tbody id="ref-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+// ---- State ----
+let charts = {};
+let currentData = null;
+
+// ---- Helpers ----
+const $ = id => document.getElementById(id);
+const setStatus = (msg, cls='') => {
+  const el = $('status');
+  el.textContent = msg;
+  el.className = 'status-bar ' + cls;
+};
+
+// Color palette for capacity curves
+function capacityColor(i, n) {
+  const t = n > 1 ? i / (n - 1) : 0.5;
+  // orange(low) → blue(mid) → green(high)
+  const r = Math.round(248 - t * 190);
+  const g = Math.round(129 + t * 56);
+  const b = Math.round(102 + t * 153);
+  return `rgb(${r},${g},${b})`;
+}
+
+// ---- UI Bindings ----
+function updateSiteCount() {
+  const D = +$('inp-D').value;
+  const N = +$('inp-N').value;
+  $('lbl-sites').textContent = Math.pow(N, D).toLocaleString();
+  // Adjust N max based on D
+  if (D >= 4) $('inp-N').max = 20;
+  else if (D >= 3) $('inp-N').max = 64;
+  else $('inp-N').max = 256;
+  if (+$('inp-N').value > +$('inp-N').max) $('inp-N').value = $('inp-N').max;
+}
+
+['inp-D', 'inp-N'].forEach(id => $(id).addEventListener('change', updateSiteCount));
+
+// Range sliders
+['Cmin', 'Cmax', 'Cint'].forEach(k => {
+  $('inp-' + k).addEventListener('input', () => {
+    $('lbl-' + k).textContent = parseFloat($('inp-' + k).value).toFixed(2);
+  });
+});
+
+// ---- Charts ----
+function initCharts() {
+  const commonOpts = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 300 },
+    plugins: {
+      legend: {
+        display: false,
+      }
+    },
+    scales: {
+      x: { grid: { color: '#30363d' }, ticks: { color: '#8b949e', font: { size: 11 } } },
+      y: { grid: { color: '#30363d' }, ticks: { color: '#8b949e', font: { size: 11 } } }
+    }
+  };
+
+  charts.dsVsC = new Chart($('chart-ds-vs-c'), {
+    type: 'line',
+    data: { datasets: [] },
+    options: {
+      ...commonOpts,
+      scales: {
+        ...commonOpts.scales,
+        x: { ...commonOpts.scales.x, title: { display: true, text: 'C_geo', color: '#8b949e' } },
+        y: { ...commonOpts.scales.y, title: { display: true, text: 'd_s (plateau)', color: '#8b949e' }, beginAtZero: true }
+      }
+    }
+  });
+
+  charts.dsVsSigma = new Chart($('chart-ds-vs-sigma'), {
+    type: 'line',
+    data: { datasets: [] },
+    options: {
+      ...commonOpts,
+      plugins: { ...commonOpts.plugins, legend: { display: true, position: 'right',
+        labels: { color: '#8b949e', font: { size: 10 }, boxWidth: 12, padding: 4 } } },
+      scales: {
+        x: { ...commonOpts.scales.x, type: 'logarithmic', title: { display: true, text: 'σ (diffusion time)', color: '#8b949e' } },
+        y: { ...commonOpts.scales.y, title: { display: true, text: 'd_s(σ)', color: '#8b949e' }, min: 0 }
+      }
+    }
+  });
+
+  charts.Pplot = new Chart($('chart-P-vs-sigma'), {
+    type: 'line',
+    data: { datasets: [] },
+    options: {
+      ...commonOpts,
+      plugins: { ...commonOpts.plugins, legend: { display: true, position: 'right',
+        labels: { color: '#8b949e', font: { size: 10 }, boxWidth: 12, padding: 4 } } },
+      scales: {
+        x: { ...commonOpts.scales.x, type: 'logarithmic', title: { display: true, text: 'σ', color: '#8b949e' } },
+        y: { ...commonOpts.scales.y, type: 'logarithmic', title: { display: true, text: 'P(σ)', color: '#8b949e' } }
+      }
+    }
+  });
+
+  charts.modes = new Chart($('chart-modes'), {
+    type: 'line',
+    data: { datasets: [] },
+    options: {
+      ...commonOpts,
+      scales: {
+        x: { ...commonOpts.scales.x, title: { display: true, text: 'C_geo', color: '#8b949e' } },
+        y: { ...commonOpts.scales.y, title: { display: true, text: 'd_eff (nominal)', color: '#8b949e' }, min: 0 }
+      }
+    }
+  });
+}
+
+function updateCharts(data) {
+  const scans = data.scans;
+  const sigmas = data.sigma_values;
+  const D = data.D;
+
+  // 1) d_s vs C_geo
+  const plateauData = scans.map(s => ({ x: s.C_geo, y: s.ds_plateau }));
+  charts.dsVsC.data = {
+    datasets: [
+      {
+        label: 'd_s plateau',
+        data: plateauData,
+        borderColor: '#58a6ff',
+        backgroundColor: 'rgba(88,166,255,0.1)',
+        borderWidth: 2,
+        pointRadius: 4,
+        pointBackgroundColor: '#58a6ff',
+        fill: true,
+        tension: 0.3
+      },
+      // Reference lines for integer dimensions
+      ...Array.from({ length: D }, (_, i) => ({
+        label: `d=${i+1}`,
+        data: [{ x: scans[0].C_geo, y: i+1 }, { x: scans[scans.length-1].C_geo, y: i+1 }],
+        borderColor: ['#f78166','#d2a8ff','#58a6ff','#3fb950'][i],
+        borderWidth: 1,
+        borderDash: [6, 3],
+        pointRadius: 0,
+        fill: false
+      }))
+    ]
+  };
+  charts.dsVsC.options.scales.y.max = D + 0.5;
+  charts.dsVsC.update();
+
+  // 2) d_s(σ) curves — show subset of scans
+  const step = Math.max(1, Math.floor(scans.length / 8));
+  const subset = scans.filter((_, i) => i % step === 0 || i === scans.length - 1);
+  charts.dsVsSigma.data = {
+    datasets: subset.map((s, idx) => ({
+      label: `C=${s.C_geo.toFixed(2)}`,
+      data: sigmas.map((sig, j) => ({ x: sig, y: s.ds_values[j] })),
+      borderColor: capacityColor(idx, subset.length),
+      borderWidth: 1.5,
+      pointRadius: 0,
+      fill: false,
+      tension: 0.2
+    }))
+  };
+  charts.dsVsSigma.options.scales.y.max = D + 1;
+  charts.dsVsSigma.update();
+
+  // 3) P(σ) curves
+  charts.Pplot.data = {
+    datasets: subset.map((s, idx) => ({
+      label: `C=${s.C_geo.toFixed(2)}`,
+      data: sigmas.map((sig, j) => ({ x: sig, y: s.P_values[j] })).filter(p => p.y > 1e-15),
+      borderColor: capacityColor(idx, subset.length),
+      borderWidth: 1.5,
+      pointRadius: 0,
+      fill: false,
+      tension: 0.2
+    }))
+  };
+  charts.Pplot.update();
+
+  // 4) Nominal effective dimension vs capacity
+  charts.modes.data = {
+    datasets: [
+      {
+        label: 'd_eff (nominal = Σw_d)',
+        data: scans.map(s => ({ x: s.C_geo, y: s.d_eff_nominal })),
+        borderColor: '#3fb950',
+        backgroundColor: 'rgba(63,185,80,0.1)',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: '#3fb950',
+        fill: true,
+        tension: 0.1
+      },
+      {
+        label: 'd_s (measured)',
+        data: scans.map(s => ({ x: s.C_geo, y: s.ds_plateau })),
+        borderColor: '#58a6ff',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: '#58a6ff',
+        borderDash: [4, 4],
+        fill: false,
+        tension: 0.3
+      }
+    ]
+  };
+  charts.modes.options.scales.y.max = D + 0.5;
+  charts.modes.options.plugins.legend = {
+    display: true, position: 'top',
+    labels: { color: '#8b949e', font: { size: 11 }, boxWidth: 12, padding: 8 }
+  };
+  charts.modes.update();
+}
+
+function updateThresholds(data) {
+  const thresholds = data.thresholds;
+  const tbody = $('thresholds-body');
+  const card = $('thresholds-card');
+
+  if (!thresholds || thresholds.length === 0) {
+    card.style.display = 'none';
+    return;
+  }
+  card.style.display = '';
+  tbody.innerHTML = thresholds.map(t => `
+    <tr>
+      <td class="num">${t.target_dimension.toFixed(1)}</td>
+      <td class="num">${t.C_geo_threshold.toFixed(4)}</td>
+      <td class="num">[${t.bracket[0].toFixed(3)}, ${t.bracket[1].toFixed(3)}]</td>
+    </tr>
+  `).join('');
+}
+
+function updateSummary(data) {
+  const card = $('summary-card');
+  const div = $('dim-summary');
+  card.style.display = '';
+
+  const D = data.D;
+  const minDs = Math.min(...data.scans.map(s => s.ds_plateau));
+  const maxDs = Math.max(...data.scans.map(s => s.ds_plateau));
+
+  let html = `
+    <p style="margin-bottom:10px">
+      Lattice: <strong>${D}D</strong> (N=${data.N}, ${data.total_sites.toLocaleString()} sites) &nbsp;
+      d_s range: <span class="dim-badge dim-${Math.round(minDs)}">${minDs.toFixed(2)}</span>
+      → <span class="dim-badge dim-${Math.round(maxDs)}">${maxDs.toFixed(2)}</span>
+    </p>
+    <p style="font-size:13px;color:var(--text-muted)">
+  `;
+
+  if (maxDs > D - 0.1 && minDs < D - 0.5) {
+    html += `Capacity filtering reduces effective dimension from ~${D} to ~${minDs.toFixed(1)}. `;
+    html += `The substrate is unchanged — only the observational capacity changes the geometry.`;
+  } else if (maxDs > D - 0.1) {
+    html += `At full capacity, d_s ≈ ${D} as expected. Increase the capacity range or lower C_min for dimensional reduction.`;
+  } else {
+    html += `d_s does not reach ${D} — try increasing C_max or N for a cleaner large-scale plateau.`;
+  }
+  html += '</p>';
+  div.innerHTML = html;
+}
+
+// ---- Run computation ----
+async function runScan() {
+  const btn = $('btn-run');
+  btn.disabled = true;
+  setStatus('Computing...', 'computing');
+
+  const body = {
+    D: +$('inp-D').value,
+    N: +$('inp-N').value,
+    C_min: +$('inp-Cmin').value,
+    C_max: +$('inp-Cmax').value,
+    C_int: +$('inp-Cint').value,
+    filter_mode: "directional",
+    n_steps: +$('inp-steps').value,
+    sigma_min: +$('inp-smin').value,
+    sigma_max: +$('inp-smax').value,
+  };
+
+  try {
+    const resp = await fetch('/api/compute', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (!resp.ok) {
+      const err = await resp.json();
+      throw new Error(err.error || 'Server error');
+    }
+    currentData = await resp.json();
+    updateCharts(currentData);
+    updateThresholds(currentData);
+    updateSummary(currentData);
+    setStatus(`Done — ${currentData.scans.length} capacity steps, ` +
+      `${currentData.thresholds.length} thresholds detected`, 'done');
+    loadResultsList();
+  } catch (e) {
+    setStatus('Error: ' + e.message, '');
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+$('btn-run').addEventListener('click', runScan);
+
+// ---- Results list ----
+async function loadResultsList() {
+  try {
+    const resp = await fetch('/api/results');
+    const results = await resp.json();
+    const container = $('results-list');
+    if (results.length === 0) {
+      container.innerHTML = '<div class="empty-state"><p>No saved results yet</p></div>';
+      return;
+    }
+    container.innerHTML = results.map(r => `
+      <div class="result-item" data-id="${r.id}" onclick="loadSavedResult('${r.id}')">
+        <div class="meta">
+          <div class="label">${r.label}</div>
+          <div class="time">${r.timestamp_human} · ${r.n_scans} steps · ${r.thresholds.length} thresholds</div>
+        </div>
+        <button class="del" onclick="event.stopPropagation(); deleteSavedResult('${r.id}')" title="Delete">×</button>
+      </div>
+    `).join('');
+  } catch(e) {
+    console.error('Failed to load results:', e);
+  }
+}
+
+async function loadSavedResult(id) {
+  setStatus('Loading result...', 'computing');
+  try {
+    const resp = await fetch(`/api/results/${id}`);
+    const full = await resp.json();
+    currentData = full.data;
+    currentData.thresholds = full.thresholds;
+    updateCharts(currentData);
+    updateThresholds({ thresholds: full.thresholds });
+    updateSummary(currentData);
+    setStatus(`Loaded: ${full.label}`, 'done');
+    // Highlight active
+    document.querySelectorAll('.result-item').forEach(el => {
+      el.classList.toggle('active', el.dataset.id === id);
+    });
+  } catch(e) {
+    setStatus('Error loading: ' + e.message, '');
+  }
+}
+
+async function deleteSavedResult(id) {
+  await fetch(`/api/results/${id}`, { method: 'DELETE' });
+  loadResultsList();
+}
+
+// ---- Reference table ----
+async function loadReferences() {
+  try {
+    const resp = await fetch('/api/reference');
+    const data = await resp.json();
+    $('ref-body').innerHTML = data.references.map(r => `
+      <tr>
+        <td>${r.name}</td>
+        <td class="num">${r.ds_UV}</td>
+        <td class="num">${r.ds_IR}</td>
+        <td class="num">${r.D_lattice}</td>
+        <td style="color:var(--text-muted)">${r.source}</td>
+      </tr>
+    `).join('');
+  } catch(e) {}
+}
+
+// ---- Init ----
+document.addEventListener('DOMContentLoaded', () => {
+  updateSiteCount();
+  initCharts();
+  loadResultsList();
+  loadReferences();
+});
+</script>
+</body>
+</html>

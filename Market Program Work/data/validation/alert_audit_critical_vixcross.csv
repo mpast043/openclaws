@@ -1,0 +1,5 @@
+alert_date,tier,regime_at_alert,q_stop,stop_reason,target_name,target_kind,target_window_days,hit,event_date,lead_days,vix_value,forward_max_drawdown,forward_min_return
+2008-10-13,critical,Critical,0.4,power,vix_cross30,vix,30,0,,,54.9900016784668,-0.1539143832495705,-0.0903497780862258
+2011-08-08,critical,Critical,0.2,power,vix_cross30,vix,30,0,,,48.0,0.0011613178438613,-0.0445937143129993
+2015-10-02,critical,Critical,0.2,power,vix_cross30,vix,30,0,,,20.940000534057617,0.0,-0.0068254239478691
+2020-03-09,critical,Critical,0.4,power,vix_cross30,vix,30,0,,,54.459999084472656,-0.1853810386038643,-0.1198405524039344

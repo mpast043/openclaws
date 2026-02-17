@@ -1,0 +1,28 @@
+SPECTRAL DIMENSION MARKET TEST — RESEARCH MEMO
+==================================================
+
+1. Does ds meaningfully change during crises?
+
+   2008: mean ds = 0.7345
+   Mar 2020: mean ds = 0.3186
+   2022: mean ds = 0.8676
+   Non-crisis mean ds = 0.9557
+
+2. Is ds leading, coincident, or lagging (vs VIX)?
+
+   Best lag: 13 days, corr = -0.2587 — ds leads VIX.
+
+3. Is ds redundant with volatility?
+
+   Correlation ds–VIX (lag 0): -0.2455. Low |r|: not strongly redundant with VIX.
+
+4. Evidence of structural regime detection?
+
+   Crisis vs non-crisis mean ds spread: 0.6370. Some difference.
+
+5. Brutally honest summary
+
+   ds shows some variation between crisis and non-crisis periods; inspect the plot.
+   ds–VIX correlation (lag 0) is -0.245: low redundancy.
+   Conclusion: This pipeline does not provide evidence that spectral dimension of
+   rolling correlation networks detects structural market regime shifts.

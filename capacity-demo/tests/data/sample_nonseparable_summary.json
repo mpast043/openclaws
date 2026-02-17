@@ -1,0 +1,38 @@
+{
+  "D": 3,
+  "N": 16,
+  "rewire_rate": 0.03,
+  "ds_plateau_min": 1.12,
+  "ds_plateau_max": 3.95,
+  "criteria": {
+    "A": {
+      "name": "Monotonicity",
+      "pass": true,
+      "max_drop": 0.02,
+      "tolerance": 0.25,
+      "used_uncertainty": false
+    },
+    "B": {
+      "name": "Threshold locations",
+      "pass": true,
+      "jumps": [
+        {"rank": 1, "c_mid": 0.33, "predicted_c": 0.3333, "error": 0.0033, "magnitude": 1.45},
+        {"rank": 2, "c_mid": 0.67, "predicted_c": 0.6667, "error": 0.0033, "magnitude": 1.27}
+      ]
+    },
+    "C": {
+      "name": "Plateau banding",
+      "pass": true,
+      "segment_means": [1.13, 2.81, 3.9],
+      "segment_stds": [0.01, 0.04, 0.02],
+      "gaps": [1.68, 1.09]
+    },
+    "overall_pass": true
+  },
+  "result": {
+    "C_geo_values": [0.1, 0.3, 0.5, 0.7, 0.9],
+    "sigma_values": [0.01, 0.1, 1.0],
+    "ds_plateau": [1.15, 1.2, 2.7, 3.5, 3.9]
+  },
+  "elapsed_s": 1.23
+}

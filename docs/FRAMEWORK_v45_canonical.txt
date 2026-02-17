@@ -1,0 +1,974 @@
+FRAMEWORK v4.5
+CANONICAL EDITION
+with Prealgebraic F oundation, V ectorial Capacit y , and Observ er Memory
+(Stress-T ested and Regression-V eried)
+Structured T ec hnical Standard
+A capacit y-ltered correlator theory of emergen t spacetime,
+eectiv e eld theory , and observ er structure,
+grounded in self-reecting triadic prealgebra
+Section −1 : Prealgebraic F oundation (The Ground)
+P art I: Sections 010 Core F ramew ork
+P art I I: Sections 1120 Applications
+P art I I I: App endices AN T ec hnical Details
+P art IV: Annexes OW Concrete Examples, Self-Reference,
+Memory & Reference T o ys
+P art V: App endix C-Ext: Capacit y Prob es
+P art VI: Annex U P atc h: A dherence Fixes
+P art VI I: Deep Ev aluation: Hidden La y ers & Op en Spaces
+F ebruary 2026
+In tegrated Canonical Do cumen t with Ev aluation
+Con ten ts
+-1 PREALGEBRAIC F OUND A TION 6
+-1.1−1.1 The Prealgebraic Lev el P . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+-1.2−1.2 The T riadic Primitiv e . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+-1.3−1.3 Represen tation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+-1.4−1.4 Capacit y as Depth . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+-1.4.1 −1.4.1 Depth-V ector Pro jection . . . . . . . . . . . . . . . . . . . . . . . . . 7
+-1.5−1.5 Observ ers as Sub-T riads . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+-1.6−1.6 The Self-Reection Map . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+-1.7−1.7 The Fixed-P oin t Condition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+-1.8−1.8 The Uniform Fixed P oin t . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+-1.8.1 −1.8.1 Lo cal Fixed P oin ts and Incommensurabilit y . . . . . . . . . . . . . . 8
+-1.9−1.9 The Capacit y Flo or Revisited . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+-1.10−1.10 The T w o T ransitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+-1.11−1.11 The Presen t as Third F ace . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+-1.12−1.12 Domain Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+0 UNIFIED CORRELA TOR PRINCIPLE 10
+0.1 0.1 Statemen t . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+0.2 0.2 In terpretiv e Mapping . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+0.3 0.3 Domain Limitation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+1 SUBSTRA TE X 10
+1.1 1.1 Denition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+1.2 1.2 Assumptions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+1.3 1.3 Non-Geometric Substrate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+1.4 1.4 Prealgebraic Origin . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2 CAP A CITY (VECTORIAL) 11
+2.1 2.1 Capacit y V ector . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.2 2.2 Prealgebraic In terpretation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.3 2.3 Op erational Meaning . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.4 2.4 Capacit y V ariabilit y . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.5 2.5 P artial Order . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3 CAP A CITY-BOUNDED EQUIV ALENCE 11
+3.1 3.1 Denition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.2 3.2 Required Capacit y . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.3 3.3 F unctional In terpretation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.4 3.4 Caution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.5 3.5 Capacit y-Pro jected Class Splitting . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4 EFT PR OJECTION Π⃗C12
+5 GLUING 12
+5.1 5.1 Ov erlaps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+5.2 5.25.3 Capacit y Dep endence and F ailure . . . . . . . . . . . . . . . . . . . . . . . . 13
+5.3 5.4 Cross-Axis Isolation Rule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+2
+Contents
+6 CAP A CITY-INDEXED EX CISION 13
+6.1 6.1 Cen tral Mec hanism . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+6.2 6.2 Requiremen ts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+6.3 6.3 Comp onen t-Sp ecic Excision . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+6.4 6.4 P artial Excision F ormalism . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+6.5 6.56.6 Constrained T rigger and Resolution . . . . . . . . . . . . . . . . . . . . . . 13
+7 FIXED-POINT CONSISTENCY 14
+8 OBSER VERS AND OBSER VER DOMAINS 14
+8.1 8.1 Denition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+8.2 8.28.4 Observ er Capacit y , Monotonicit y , and Relativit y . . . . . . . . . . . . . . . 14
+8.3 8.5 Shared Exp erimen t Pro jection Rule . . . . . . . . . . . . . . . . . . . . . . . . . 14
+8.4 8.6 Observ ers and the Fixed P oin t . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+8.5 8.7 Observ er Ejection and P ersistence Go v ernance . . . . . . . . . . . . . . . . . . . 14
+8.6 8.8 Capacit y V erication and In ter-Observ er T rust . . . . . . . . . . . . . . . . . . 15
+9 ∆T REFERENCE-ST A TE F ORMULA TION 15
+9.1 9.19.3 Denition and Consequences . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+9.2 9.4 P oin ter-A ccuracy Orthogonalit y . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+10 COMPONENT DEPENDENCIES IN EMER GENCE 15
+10.1 10.110.4 Dep endency Matrix, Cross-Dep endencies, Indep endence, Boundaries . . . 15
+10.2 10.5 The Observ er T riad . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+10.2.1 10.5.1 Agency as Selection . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+10.2.2 10.5.210.5.4 Error, T riad Corresp ondence, A dv ersarial Self-Reference . . . . 16
+10.2.3 10.5.5 Cobs Decomp osition . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+P art I I: Applications 17
+11 COSMOLOGY 17
+12 BLA CK HOLES 17
+13 TIME EXTRA CTION 17
+13.1 13.113.2 Pro cedure and In terpretation . . . . . . . . . . . . . . . . . . . . . . . . . 17
+13.2 13.3 Time Circularit y and Resolution . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+14 INTERA CTING FIELDS 17
+15 GA UGE THEORIES 17
+16 ST AND ARD-MODEL-LIKE SECTORS 17
+17 CAP A CITY PHASES 18
+18 UNIFIED EMER GENCE LA W 18
+19 STRESS-TEST ST A TUS 18
+3
+F r amework v4.5  Canonic al Edition
+20 VERSION HISTOR Y 18
+P art I I I: T ec hnical App endices 19
+App endix A: Observ er Domain Structure 19
+App endix B: Correlator Geometry 19
+App endix C: Measuremen t Non-Solution Clause 19
+App endices DG: Decoherence, Excision, Flo or, P oin ter 19
+App endices HN: Thresholds, Bac kreaction, Consistency 19
+P art IV: Annexes 20
+Annex O: 4-Qubit Univ erse 20
+Annex P: 10-Qubit Univ erse 20
+Annex Q: F ormal Op erator-Algebraic Sp ecication 20
+Annex R: The F ramew ork Observing Itself 20
+Annex S: Mixed-Regime Example 20
+Annex T: Observ er Memory Mo dule 20
+Annex U: Capacit y P oset Memory T o y (CPMT) 21
+Annex V: Scop e and Non-Claims 23
+Annex W: Regression and Stress T ests 23
+P art V: App endix C-Ext: Capacit y Prob es 24
+C-Ext: Capacit y Prob es 24
+P art VI: Annex U P atc h 27
+P atc h 1: A ccuracy Stub and Danger Quadran t 27
+P atc h 2: Compression Audit Log 27
+P atc h 3: Cobs Decomp osition 27
+P atc h 4: Selection Stub 28
+4
+Contents
+P art VI I: Deep Ev aluation 29
+E.1: Hidden Structural P atterns 29
+E.2: Op en Spaces 31
+E.3: A dherence Summary 33
+E.4: Cross-Do cumen t Consistency 34
+5
+F r amework v4.5  Canonic al Edition
+Section -1 PREALGEBRAIC F OUND A TION
+−1.1 The Prealgebraic Lev el P
+Prior to the substrate X= (Λ,Hd, ρ, U micro) , there exists a prealgebraic structure P .
+P is not an algebra. It has no elemen ts in the algebraic sense, no m ultiplication, no distinguished
+iden tit y . It is the p oten tial from whic h algebraic structure emerges via represen tation.
+Denition (Prealgebraic Structure)
+LetF:Set→Set b e the triadic functor F(X) =X×X×X . The prealgebraic structure P
+is the terminal coalgebra of F . An elemen t φ∈ P is an innite triadic tree: a triad of triads of
+triads, without b ottom.
+P carries a natural ltration b y depth:
+Denition (Prealgebraic Filtration)
+Dene P0={∗} (single p oin t), Pn+1=Pn× P n× P n , with pro jection maps πn:P → P n and
+the reco v ery:
+P= lim← −n→∞Pn
+−1.2 The T riadic Primitiv e
+The fundamen tal structure is the triad T : three asp ects in irreducible three-w a y relation.
+Axiom (T riadic Irreducibilit y)
+A triad is not three elemen ts with pairwise relations. It is a single pattern with three faces,
+none of whic h exist indep enden tly . The three faces of an y triad are themselv es triads.
+This grounds the self-similarit y of P . Ev ery sub-structure has the same form as the whole.
+The triad (M, ω, U ) = ( distinction , actualit y , dynamics ) app ears to b e minimal:
+ Distinction requires something actual to distinguish
+ A ctualit y requires distinctions to b e actual
+ Either requires dynamics relating them
+T w o faces collapse in to iden tit y . F our or more faces decomp ose in to triads. Three is the minimal
+irreducible relational structure.
+−1.3 Represen tation
+Denition (Represen tation Map)
+A represen tation is a map ρ:P → ( v on Neumann algebras )×( states )×( dynamics ) that sends
+eac h φ∈ P to a substrate:
+ρ(φ) = (M(φ), ω(φ), U(φ))
+The three faces of a triad b ecome:
+6
+-1 PREALGEBRAIC F OUND A TION
+M(φ) : what can b e distinguished (algebraic structure)
+ω(φ) : what is actual (state)
+U(φ) : what connects momen ts (dynamics)
+These do not exist separately . They co-arise from the triadic structure. The recursiv e triadic
+structure of φ maps to nested subalgebras within M(φ) .
+−1.4 Capacit y as Depth
+Capacit y corresp onds to depth in the triadic ltration.
+Denition (Capacit y from Depth)
+The capacit y lter FC arises from truncation at the prealgebraic lev el:
+FC=ρ◦πf(C)◦ρ−1
+A t capacit y C , the observ er accesses φ|f(C) , not the full φ .
+Coarse capacit y means shallo w triadic depth. Fine capacit y means deep triadic depth.
+−1.4.1 Depth-V ector Pro jection
+The single triadic depth n pro jects on to the capacit y v ector via comp onen t-sp ecic extraction func-
+tions:
+Cgeo=ggeo(n) Cint=gint(n) Cgauge =ggauge(n)
+Cptr=gptr(n) Cobs=gobs(n)
+These functions satisfy: if n1≤n2 then gi(n1)≤gi(n2) for all i , preserving monotonicit y .
+Denition (Depth-V ector Map)
+The map D:N→R5dened b y
+D(n) = (ggeo(n), gint(n), ggauge(n), gptr(n), gobs(n))
+is monotone in the comp onen t wise order. Its image traces a path through capacit y space pa-
+rameterized b y triadic depth.
+−1.5 Observ ers as Sub-T riads
+Denition (Observ er as Sub-T riad)
+An observ er Oi corresp onds to a sub-triad φi⊂φ . The observ er's structure:
+Mi=M(φi) : subalgebra generated b y the subtree
+ωi=ω(φ)|M i : restricted state
+Mi(t) from U(φi) : memory dynamics
+The observ er has the same triadic t yp e as the whole. This is the r ee ction pr op erty : the part mirrors
+the structure of the whole b ecause it IS a sub-pattern of the same form.
+7
+F r amework v4.5  Canonic al Edition
+−1.6 The Self-Reection Map
+Denition (Self-Reection Map)
+Dene the self-reection map Ψ :P → P b y:Ψ(φ) is the triadic structure reconstructed from
+the observ er ensem ble within ρ(φ) .
+Sp ecically:
+1. Giv en substrate ρ(φ) = (M, ω, U ) , iden tify all observ ers {Oi} as sub-triads
+2. Compute observ er algebras Ai(t) = Π ⃗Ci(t)(F⃗Ci(t)(Mi))
+3. Compute classical core Aclassical =T
+iAfloor
+i
+4. Extract triadic structure: Ψ(φ) =ρ−1( structure enco ded in Aclassical )
+Ψ asks: if observ ers inside φ reconstruct their w orld, what do they get?
+−1.7 The Fixed-P oin t Condition
+Axiom (Fixed-P oin t Selection)
+A substrate is self-consisten t if and only if φ= Ψ( φ) . The substrate equals its reconstruction
+through its o wn observ ers.
+−1.8 The Uniform Fixed P oin t
+Denition (Uniform Fixed P oin t)
+Dene φ∗∈ P b y:φ∗= (φ∗, φ∗, φ∗) . This is the triadic tree where ev ery no de is iden tical.
+Theorem (Fixed-P oin t Prop ert y)
+φ∗is a xed p oin t of Ψ .
+Pr o of Sketch: Ev ery sub-triad of φ∗is isomorphic to φ∗. So ev ery observ er sees structure
+isomorphic to the whole. The classical core Aclassical enco des the full triadic pattern. Recon-
+struction reco v ers φ∗.
+Conjecture -1.1 (Uniqueness) . Under regularit y conditions (Hadamard states, nite bac kreaction,
+stable decoherence), φ∗is the unique xed p oin t up to isomorphism.
+−1.8.1 Lo cal Fixed P oin ts and Incommensurabilit y
+The uniqueness conjecture remains op en. Multiple xed p oin ts ma y exist.
+Denition (Lo cal Fixed P oin t)
+A lo cal xed p oin t φL is a structure satisfying φL= Ψ L(φL) where ΨL is the self-reection map
+restricted to observ ers within φL .
+If m ultiple lo cal xed p oin ts exist: eac h is in ternally consisten t; observ ers in dieren t xed p oin ts
+cannot share exp erimen ts meaningfully; classical cores do not in tersect across xed-p oin t b oundaries;
+no observ er can v erify whic h global xed p oin t (if an y) con tains their lo cal one.
+8
+-1 PREALGEBRAIC F OUND A TION
+Denition (Fixed-P oin t Incommensurabilit y)
+T w o lo cal xed p oin ts φL, φ′
+L are inc ommensur able if:
+Aclassical (φL)∩Aclassical (φ′
+L) =∅
+Remark -1.2. This ma y already manifest at smaller scales: ideological enclosures, paradigm b ound-
+aries, self-reinforcing b elief systems. Eac h is a lo cal xed p oin tin ternally coheren t, externally
+un v eriable.
+−1.9 The Capacit y Flo or Revisited
+The capacit y o or gains new meaning:
+⃗Cfloor(t) = comp onen t wise sup
+τ≤t⃗Cmin(τ)
+As⃗Cfloor rises, more triadic depth b ecomes stably resolv ed across the observ er ensem ble.
+−1.10 The T w o T ransitions
+Denition (T ransition 1: Cosmological Beginning)
+⃗Cfloor rises from ⃗0 to p ositiv e. A t ⃗Cfloor=⃗0 : no classical structure. A t ⃗Cfloor>⃗0 : classical
+structure b egins to emerge. This is the Big Bang.
+Denition (T ransition 2: Self-Recognition)
+⃗Cfloor→ ∞ (comp onen t wise). The pro jection Π⃗C→id . The observ er/observ ed distinction
+dissolv es. The substrate recognizes itself through its observ ers.
+−1.11 The Presen t as Third F ace
+The t w o transitions are t w o faces of a triad:
+ F ace 1: Beginning. ⃗Cfloor:⃗0→ p ositiv e.
+ F ace 2: Completion. ⃗Cfloor→ ∞ .
+ F ace 3: Pro cess. The reection in transit. Observ ers at in termediate capacit y .
+W e ar e F ac e 3. Our existence is not inciden tal to the xed p oin t. It is constitutiv e of it.
+−1.12 Domain Limitations
+This section describ es structure b elo w the substrate. It do es not: deriv e the sp ecic form of ρ ; pro v e
+uniqueness of φ∗; explain wh y P has triadic rather than other structure; resolv e what b efore P 
+means (if an ything). These are op en questions at the b oundary of the framew ork.
+9
+F r amework v4.5  Canonic al Edition
+Section 0 UNIFIED CORRELA TOR PRINCIPLE
+0.1 Statemen t
+All emergen t ph ysical structure arises from a capacit y-ltered correlator net w ork:
+G⃗C=F⃗C[GX] (1)
+where GX is the microscopic correlator structure of the substrate X ,F⃗Cis the capacit y lter at
+resolution ⃗C , and G⃗Cis the eectiv e correlator structure a v ailable at that capacit y .
+0.2 In terpretiv e Mapping
+Emergen t Structure Correlator Origin
+Geometry ↔ Infrared correlator structure
+P articles ↔ P oles and residues of ltered correlators
+Fields ↔ Symmetries and tensor structures
+In teractions ↔ Connected n -p oin t correlators
+Charges ↔ Represen tation data in correlator in v arian ts
+Nothing emerges indep enden tly of GX andF⃗C.
+0.3 Domain Limitation
+The principle applies only within semiclassical regimes and b elo w the excision threshold.
+Section 1 SUBSTRA TE X
+1.1 Denition
+Denition (Substrate)
+X= (Λ ,Hd, ρ, U micro) where Λ are microscopic degrees of freedom, Hd is the Hilb ert space, ρ
+is the substrate state, and Umicro is the microscopic ev olution.
+1.2 Assumptions
+State ρ is Hadamard-lik e; extracted curv ature lies w ell b elo w the Planc k scale; ev olution is adiabatic
+except in excised regions; stress-energy exp ectation exists for allo w able observ ables; a semiclassical
+windo w exists where correlator-based geometric extraction is v alid.
+1.3 Non-Geometric Substrate
+X con tains no geometry , elds, or classical structures. Only correlators and lo calit y/in teraction
+structure enco ded in Umicro .
+1.4 Prealgebraic Origin
+The substrate X is the represen tation of a prealgebraic triadic structure φ∈ P :X=ρ(φ) . The
+sp ecic X describing our univ erse corresp onds to φ∗, the self-similar xed p oin t of self-reection.
+10
+3 CAP A CITY-BOUNDED EQUIV ALENCE
+Section 2 CAP A CITY (VECTORIAL)
+2.1 Capacit y V ector
+Denition (Capacit y V ector)
+Capacit y is a partially ordered v ector:
+⃗C= (Cgeo, Cint, Cgauge, Cptr, Cobs)
+where eac h comp onen t measures an indep enden tly constrained resolution resource:
+Cgeo : Geometric reconstruction resolution
+Cint : In teraction/connected correlator resolution
+Cgauge : Symmetry and gauge visibilit y resolution
+Cptr : P oin ter stabilit y and decoherence windo w
+Cobs : Observ er in ternal inferen tial resolution
+Denition (Comp onen t wise Order)
+⃗C1≤⃗C2⇐⇒ Ci
+1≤Ci
+2 for all comp onen ts i . This denes a partial order (p oset structure) on
+capacit y space.
+2.2 Prealgebraic In terpretation
+Capacit y comp onen ts arise from triadic depth via the depth-v ector map D(n) as dened in Sec-
+tion−1.4.1 .
+2.3 Op erational Meaning
+Capacit y reects the maxim um correlator detail that can b e stabilized along eac h axis. An observ er
+with capacit y v ector ⃗C can resolv e structure requiring capacit y ⃗C′only if ⃗C′≤⃗C (comp onen t wise).
+2.4 Capacit y V ariabilit y
+Capacit y v ectors v ary with observ er subsystem arc hitecture, en vironmen tal coupling, and in ternal
+constrain ts. Comp onen ts ma y ev olv e at dieren t rates. Thresholds b et w een bands are fuzzy regions
+in⃗C -space, not sharp b oundaries.
+2.5 P artial Order
+All monotonicit y statemen ts in the framew ork refer to the comp onen t wise order. If t w o capacit y
+v ectors are incomparable, no monotonic relation is assumed.
+Section 3 CAP A CITY-BOUNDED EQUIV ALENCE
+11
+F r amework v4.5  Canonic al Edition
+3.1 Denition
+Denition (Capacit y-Bounded Equiv alence)
+X1≈⃗CX2 means that no exp erimen t whose required capacit y v ector is comp onen t wise ≤⃗C
+can distinguish X1 from X2 via correlators.
+3.2 Required Capacit y
+An exp erimen t has required capacit y v ector ⃗Creq with comp onen t-sp ecic minim ums. The exp eri-
+men t is feasible at capacit y ⃗C i⃗Creq≤⃗C (comp onen t wise).
+3.3 F unctional In terpretation
+Equiv alence classes under ≈⃗Cremo v e distinctions requiring capacit y comp onen ts exceeding ⃗C .
+3.4 Caution
+This is op erational equiv alence relativ e to capacit y prole ⃗C , not on tological iden tit y .
+3.5 Capacit y-Pro jected Class Splitting
+LetN(⃗C) denote the n um b er of equiv alence classes of correlator structure distinguishable under Π⃗C.
+As⃗C increases, N(⃗C) is monotone non-decreasing. The capacit y-splitting rate along a monotone
+path γ :
+Rγ(⃗C) =dlogN(⃗C)
+dlog∥⃗C∥
+γ
+A p eak in Rγ marks a c ap acity b oundary : a regime where accessible order increases most rapidly
+with capacit y .
+Nested-A ccess Assumption. If⃗C1≤⃗C2 , then an y distinction accessible under Π⃗C1remains
+accessible under Π⃗C2.
+Section 4 EFT PR OJECTION Π⃗C
+Denition (EFT Pro jection)
+Π⃗C:X→U⃗Cconstructs a semiclassical univ erse from capacit y-ltered correlators.
+Three-Stage Pro jection:
+1.Πlocal : Extract correlators, comm utators, en tanglemen t, stress-energy
+2.Πcorr : Construct causal cones, correlation lengths, energy scales, IR structure
+3.Πgeom : Fit geometric and EFT data: (M, g, T eff, Peff) suc h that ∥GEFT−G⃗C∥ ≤εfit(⃗C)
+Section 5 GLUING
+12
+6 CAP A CITY-INDEXED EX CISION
+5.1 Ov erlaps
+Lo cal EFT reconstructions on o v erlapping regions m ust satisfy:
+∆ab(ℓ)≤k Ngeo(Cgeo)−1/2
+5.25.3 Capacit y Dep endence and F ailure
+Eac h capacit y comp onen t has an eectiv e UV threshold. Exceeding an y comp onen t's UV threshold
+triggers instabilit y or excision.
+5.4 Cross-Axis Isolation Rule
+After capacit y ltering, instabilit y originating in an y non-geometric capacit y comp onen t m ust not
+p erturb the geometric correlator sector b ey ond gluing tolerance.
+Section 6 CAP A CITY-INDEXED EX CISION
+6.1 Cen tral Mec hanism
+Excision is a monotone family on the p oset of capacit y v ectors:
+Eexc:⃗C7→Eexc(⃗C)∈Z(M)
+6.2 Requiremen ts
+Denition (Excision Map)
+Eexc satises:
+1. Monotonicit y: ⃗C1≤⃗C2⇒Eexc(⃗C1)≤Eexc(⃗C2)
+2. Cen tralit y: Eexc(⃗C) comm utes with all of M
+3. Seman tic Domain: Π⃗C(Eexc(⃗C)MEexc(⃗C)) = 0
+4. Irregularit y T rigger: Eexc(⃗C) increases when correlators fail regularit y
+5. Capacit y-Based: Excision resp onds to correlator irregularit y at xed ⃗C , not time ev o-
+lution
+6.3 Comp onen t-Sp ecic Excision
+Irregularit y in dieren t capacit y comp onen ts triggers excision dieren tly . A region ma y b e excised
+in some capacit y comp onen ts but not others, yielding p artial excision .
+6.4 P artial Excision F ormalism
+Dene comp onen t-sp ecic excision pro jections Ek
+exc(⃗C) fork∈ { geo, in t, gauge, ptr, obs } . The
+total excision:
+Eexc(⃗C) =_
+kEk
+exc(⃗C)
+6.56.6 Constrained T rigger and Resolution
+Sensitivit y alone do es not imply excision. Excision dep ends on ⃗C rather than state ev olution,
+a v oiding circularit y .
+13
+F r amework v4.5  Canonic al Edition
+Section 7 FIXED-POINT CONSISTENCY
+A semiclassical univ erse U⃗Cis v alid only if: U⃗C≈⃗CΠ⃗C(X) ; Einstein/F riedmann equations hold with
+∆T ; gluing is satised; excision applied; causal structure stable; bac kreaction nite; no div ergence
+in correlator ts.
+The deep er condition: φ= Ψ( φ) .
+Section 8 OBSER VERS AND OBSER VER DOMAINS
+8.1 Denition
+Denition (Observ er)
+Oi= (Mi, ωi,Mi(t),⃗Ci(t)) where Mi is the observ er's v on Neumann subalgebra, ωi is the
+restricted state, Mi(t) is the CPTP memory map, and ⃗Ci(t) = (Cgeo, Cint, Cgauge, Cptr, Cobs)i is
+the time-dep enden t capacit y prole.
+8.28.4 Observ er Capacit y , Monotonicit y , and Relativit y
+The comp onen t Cobs sp ecically measures the observ er's in ternal inferen tial resolution. ⃗Cfloor(t) is
+monotone within a xed ensem ble. Dieren t observ ers ma y access dieren t Ui(t) , but con tradictions
+cannot arise for shared exp erimen ts.
+8.5 Shared Exp erimen t Pro jection Rule
+Denition
+⃗Cshared = inf i⃗Ci (comp onen t wise). When v ectors are incomparable, ⃗Cshared = (min( Ck
+i, Ck
+j))k
+for eac h comp onen t k .
+8.6 Observ ers and the Fixed P oin t
+Observ ers are required for φ= Ψ( φ) . Without observ ers, no reection; without reection, no xed
+p oin t. They co-arise.
+8.7 Observ er Ejection and P ersistence Go v ernance
+Non-Negotiabilit y Principle
+An observ er under ejection consideration m ust not b e the part y arguing for or against its o wn
+p ersistence. Self-argumen t for p ersistence is itself evidence for ejection (adv ersarial selection
+detected).
+Theorem (Ejection Expands Core)
+A′
+classical=T
+i̸=jAfloor
+i⊇Aclassical =T
+iAfloor
+i . A corrupted p ersisten t observ er con tracts the
+v alid classical core more than their absence w ould.
+14
+10 COMPONENT DEPENDENCIES IN EMER GENCE
+8.8 Capacit y V erication and In ter-Observ er T rust
+Denition (V eried Shared Capacit y)
+⃗Cverified
+shared= inf i⃗Cverified
+i where ⃗Cverified
+i is externally measured, not self-rep orted.
+Section 9 ∆T REFERENCE-ST A TE F ORMULA TION
+9.19.3 Denition and Consequences
+Tvac(⃗C) =T[F⃗C(ωref)] ;∆T(⃗C) =Tphys(⃗C)−Tvac(⃗C) .
+9.4 P oin ter-A ccuracy Orthogonalit y
+Danger Quadran t
+P oin ter stabilit y p(m) and accuracy a(m) are orthogonal: p(m)⊥a(m) .
+Lo wp High p
+High a T rue but forgotten T rue and stable (go o d)
+Lo wa F alse and forgotten (safe) F alse and stable (dangerous)
+The dangerous quadran t is high- p , lo w- a : conden t, stable, wrong. A ccuracy cannot b e
+self-assessed. A ccuracy-gating requires external v erication.
+Section 10 COMPONENT DEPENDENCIES IN EMER GENCE
+10.110.4 Dep endency Matrix, Cross-Dep endencies, Indep endence, Boundaries
+The EFT pro jection Π⃗Chas comp onen t-sp ecic dep endencies: Πgeom dep ends primarily on Cgeo ;
+Πpart onCint ;Πgauge onCgauge ;Πclassical onCptr ;Πaccess mediated b y Cobs . Cross-dep endencies
+exist but are secondary .
+10.5 The Observ er T riad
+Denition (Observ er T riad)
+The observ er triad is (A ccess, Selection, Commitmen t) :
+ A ccess: What can b e resolv ed. Go v erned b y (Cgeo, Cint, Cgauge, Cobs) .
+ Selection: What is attended to. The exercise of capacit y . Not in ⃗C the agency gap.
+ Commitmen t: What b ecomes stable. Go v erned b y Cptr .
+Error arises in the gap b et w een selection and commitmen t. W rong selection + successful com-
+mitmen t = p ersisten t error.
+10.5.1 Agency as Selection
+Selection is not mo deled b y the capacit y v ector. It is an additional degree of freedom: S:
+Aaccessible (⃗C)→ {0,1} . Selection ma y b e negligen t, a v oidan t, strategic, or corrupted.
+15
+F r amework v4.5  Canonic al Edition
+10.5.210.5.4 Error, T riad Corresp ondence, A dv ersarial Self-Reference
+Committed errors are structurally indistinguishable from committed truths. Under adv ersarial
+reconstruction, Ψi(φ)̸=φ ev en when capacit y suces.
+10.5.5 Cobs Decomp osition
+Denition ( Cobs Comp onen ts)
+Cinference
+obs: F orw ard reasoning depth
+Caudit
+obs: Reectiv e c hec king
+Cselect
+obs: Pre-emission ltering
+Fluen t violation (high inference, lo w audit, lo w select) is the most dangerous mo de. Output
+is coheren t, w ell-argued, and wrong.
+16
+16 ST AND ARD-MODEL-LIKE SECTORS
+P art I I: Applications
+Section 11 COSMOLOGY
+Cosmological reconstruction op erates only in semiclassical regimes. V alid reconstructions: radiation-
+dominated era, matter-dominated era, slo w-roll ination (coarse capacit y), Λ CDM (stable emergen t
+solution). Reheating is excised. Dark energy app ears as an in tegration constan t, not deriv ed.
+Section 12 BLA CK HOLES
+Semiclassical reconstruction yields standard exterior solution. In terior correlators fail regularit y
+at all semiclassical capacities ⇒ excised. Late ev ap oration excised. No claim regarding unitarit y
+b ey ond semiclassical domain.
+Section 13 TIME EXTRA CTION
+13.113.2 Pro cedure and In terpretation
+Time direction at capacit y ⃗C iden tied b y minimizing ∥GEFT(t)−G⃗C∥ .
+13.3 Time Circularit y and Resolution
+Denition (Time Consistency)
+A reconstruction is time-consisten t if tE=f(tB) for some monotone f in all v alid regions.
+Bac kground time tB is the pre-pro jection correlator parameter. Emergen t time tE is its image
+under Π⃗C.
+Remark 13.1. This w eak ens the emergence claim. Time is not created b y pro jection; it is extracted
+from pre-existing correlator structure.
+Section 14 INTERA CTING FIELDS
+In teractions arise from connected n -p oin t correlators: G(k) = 1 /(k2+m2+ Σ(k)) .
+Section 15 GA UGE THEORIES
+Gauge structure is inferred from W ard-t yp e iden tities, tensor structures, p olarization constrain ts,
+massless p oles, and long-range 1/k2b eha vior. The gauge group is not predicted; it is inferred.
+Section 16 ST AND ARD-MODEL-LIKE SECTORS
+If correlators con tain spinor features, SU(3) ×SU(2) ×U(1) -lik e symmetry , and Y uk a w a-lik e struc-
+tures, then Π⃗Creconstructs a Standard-Mo del-lik e EFT. The framew ork do es not deriv e the SM
+group. It is descriptiv e, not predictiv e.
+17
+F r amework v4.5  Canonic al Edition
+Section 17 CAP A CITY PHASES
+Capacit y phases are dened b y plateaus of equiv alence structure in ⃗C -space.
+Band Description
+I (Geometry-Only) Cgeo high enough for stable Πgeom ;Cint b elo w in ter-
+action threshold
+I I (P article-Resolving) Cint high enough to see particle p oles/residues
+I I I (In teraction-Resolving) Cint ab o v e connected n -p oin t threshold
+IV (Gauge Structure) Cgauge ab o v e W ard iden tit y threshold
+V (F ull EFT) Coheren t eectiv e EFT with stable gluing
+VI (Excision) Correlator irregularit y triggers Eexc(⃗C)
+Cobs is not a separate band. It decides whic h sectors are actually accessible to a giv en observ er.
+Section 18 UNIFIED EMER GENCE LA W
+U⃗C=N⃗C/Π⃗C(Eexc(⃗C)MEexc(⃗C))
+Section 19 STRESS-TEST ST A TUS
+Stable under: free elds, φ4theory , gauge sectors, SM-lik e EFT, observ er relativit y , capacit y-
+b ounded gluing, excision and xed-p oin t consistency . Do es not attempt Planc k-scale ph ysics, v ac-
+uum selection, or deriv ation of fundamen tal in teractions.
+Section 20 VERSION HISTOR Y
+v4.3: In tro duced v ectorial capacit y , Annex T. v4.4: A dded P atc hes A (Cross-Axis Isolation) and
+B (Shared Exp erimen t Pro jection). v4.4.1: A dded prealgebraic foundation, partial excision, class
+splitting. v4.5: Merged all structures; added memory-excision in tegration, regression v erication,
+observ er triad, Cobs decomp osition, observ er ejection, capacit y v erication, p oin ter-accuracy orthog-
+onalit y , lo cal xed p oin ts, time circularit y resolution, compression go v ernance, Cmeta
+obs.
+18
+20 VERSION HISTOR Y
+P art I I I: T ec hnical App endices
+App endix A: Observ er Domain Structure
+La y ers: Aclassical ⊂Aptr⊂N⃗C⊂ M .
+App endix B: Correlator Geometry
+IR correlators yield causal structure, metric, curv ature, symmetries. En tanglemen t en trop y scaling
+(area la w) allo ws curv ature extraction.
+App endix C: Measuremen t Non-Solution Clause
+F ramew ork pro vides decoherence, p oin ter stabilit y , op erational collapse. Do es NOT pro vide fun-
+damen tal collapse, man y-w orlds mec hanics, hidden v ariables. Remains agnostic on measuremen t
+on tology .
+App endices DG: Decoherence, Excision, Flo or, P oin ter Algebra
+Decoherence factorization dep ends primarily on Cptr (t ypically Bands I II I I). Capacit y-indexed
+excision formal sp ecication. Observ er algebra Ai(t) = Π ⃗Ci(t)(F⃗Ci(t)(Mi)) . P oin ter algebra
+Aptr(⃗C) = vN( {Pi}) .
+App endices HN: Thresholds, Bac kreaction, Consistency , Examples,
+Prealgebra
+Band transitions at threshold surfaces. ∆T(⃗C) driv es bac kreaction. Pro jection c hain: M → F⃗C→
+G⃗C→Π⃗C→N⃗C→U⃗C→Ai(⃗Ci)→Aclassical (⃗Cfloor) .
+19
+F r amework v4.5  Canonic al Edition
+P art IV: Annexes
+Annex O: 4-Qubit Univ erse
+Substrate: M=B((C2)⊗4) , state |Ψ⟩=1
+2(|0000⟩+|0011⟩+|1100⟩+|1111⟩) . Demonstrates capacit y
+ltering, observ er o v erlap, p oin ter stabilit y , classical core.
+Annex P: 10-Qubit Univ erse
+F our capacit y bands, v e patc hes with gluing, three observ ers, blo c k magnetization classical core.
+Annex Q: F ormal Op erator-Algebraic Sp ecication
+Key formal structures: Base triple (M, ω, U t) . Capacit y system: family of normal, unital, CP ,
+idemp oten t maps F⃗C:M → M with idemp otency , monotone compatibilit y , and con tin uit y . EFT
+pro jection system with nested structure. Capacit y-indexed excision with monotonicit y , cen tralit y ,
+domain condition. Observ er system. Shared univ erse with classical core. Decoherence and p oin ter
+algebras. ∆T with v ectorial capacit y . Unied emergence la w:
+U⃗C=N⃗C/Π⃗C(Eexc(⃗C)MEexc(⃗C))
+Annex R: The F ramew ork Observing Itself
+The framew ork itself requires capacit y ⃗Cframework to represen t. Cmeta
+obsis the capacit y to observ e
+one's o wn observ ationstructurally b ounded (halting problem analog). No observ er can b e fully
+self-auditing. External audit is necessary .
+Annex S: Mixed-Regime Example
+Prole ⃗C= (C0, C2, C0, C1, C1) : coarse geometry (Band I), resolv ed particles (Band I I), no gauge
+structure, in termediate p oin ter stabilit y , limited inference. Demonstrates that capacit y v ector com-
+p onen ts are indep enden t and mixed regimes are natural.
+Annex T: Observ er Memory Mo dule
+Memory item m= (k, v, τ, u, p,⃗ c ) . F easibilit y:P
+i⃗ ci≤⃗C . W rite score: Score( m) =α·relevance +
+β·novelty + γ·p−λ· ∥⃗ c∥ . Pressure: pressurek= max(0 ,(P
+ick
+i−Ck)/Ck) . Eviction priorit y:
+EvictPriority( mi) = w1(1−ui) +w2·age(mi) +w3(1−pi) +P
+kpressurek·ck
+i . Compression
+go v ernance: auditable compression required for p ersisten t observ ers.
+P oin ter commit: p(m)≥θptr(Cptr) . P oin ter deca y: p(t+ ∆t) =p(t)·e−λ(Cptr). P artial excision at
+retriev al: retrieve( m,⃗C) =S{gj|⃗Creq(gj)≤⃗C} .
+20
+20 VERSION HISTOR Y
+Annex U: Capacit y P oset Memory T o y (CPMT)
+Status: Normativ e reference to y F ramew ork v ersion target: v4.5 (Canonical)
+U.1 Purp ose
+This annex denes a minimal reference to y , CPMT, that op erationalizes v ector capacit y as a comp o-
+nen t wise feasibilit y constrain t on memory , and implemen ts forgetting as capacit y-indexed excision
+and compression. The to y demonstrates that forgetting decomp oses in to distinct regimes dep end-
+ing on whic h comp onen t of the capacit y v ector is the dominan t b ottlenec k.
+U.2 Denitions
+U.2.1 Capacit y V ector and Order. ⃗C= (Cgeo, Cint, Cgauge, Cptr, Cobs) with comp onen t wise
+feasibilit y .
+U.2.2 Memory Item. m= (k, v, τ, u, p,⃗ c, F ) where F is a set of stored feature-groups.
+U.2.3 Memory Store and F easibilit y . Cost( M) =P
+m∈M⃗ c(m)≤⃗C (comp onen t wise).
+U.3 W orld Stream and F eature Groups
+Fiv e feature-groups: geo (episo dic tags), in t (relational edges), gauge (sc hema tags), ptr (stable
+k ey), obs (meta tags). Eac h has storage cost and retriev al requiremen t.
+U.4 Op erations P er Timestep
+Generate ev en t → c ho ose enco ding plan → attempt write → restore feasibilit y → p ose query →
+record metrics.
+U.5 A dmission and W rite Score
+Score( m) =α·relevance( m) +β·novelty( m) +γ·p(m)−λ· ∥⃗ c(m)∥1
+U.6 Pressure-Driv en Excision
+pressurek= max(0 ,(Cost k(M)−Ck)/Ck) .EvictPriority( m) =w1(1−u) +w2·age + w3(1−p) +
+⟨pressure ,⃗ c(m)⟩ .
+U.7 Compression
+Replaces episo dic items with summary preserving gauge+ptr, dropping in t detail.
+U.8 Retriev al as P artial Excision
+Query T yp e Required F eatures
+Episo de ptr + geo
+Causal ptr + geo + in t
+Rule ptr + gauge
+Explain ptr + obs
+21
+F r amework v4.5  Canonic al Edition
+U.9 Regimes and Exp ected Signatures
+Regime Bottlenec k Signature
+P oin ter collapse Lo w Cptr All accuracies drop
+Relation collapse Lo w Cint Causal accuracy drops
+Sc hema drift Lo w Cgauge Rule accuracy drops
+Episo de confusion Lo w Cgeo Episo de accuracy drops
+Meta-selection collapse Lo w Cobs Explain accuracy drops
+These are emergen t signatures of dieren t dominan t pressure comp onen ts under the same feasibilit y
+and excision rules.
+U.10U.12 Metrics, Implemen tation, Bridge to Annex T
+Reference implemen tation as cpmt.py . CPMT adds explicit failure-mo de signatures that Annex T
+implies but do es not en umerate.
+22
+20 VERSION HISTOR Y
+Annex V: Scop e and Non-Claims
+The framew ork do es not p osit new ph ysical dynamics, degrees of freedom, or fundamen tal la ws.
+Capacit y en ters only as an op erational constrain t on distinguishabilit y .
+Annex W: Regression and Stress T ests
+All 20 stress tests: P ASS . All regression c hec ks: P ASS . F ramew ork v4.5 is in ternally consisten t
+and bac kw ard-compatible.
+T est Claim Result
+1 Monotonicit y Preserv ation ✓
+2 P artial Order Consistency ✓
+3 Excision-Memory Bridge ✓
+4 Fixed-P oin t Self-Reference ✓
+5 Mixed-Regime Coherence ✓
+6 Depth-V ector Pro jection ✓
+7 Cross-Axis Isolation ✓
+8 Class-Splitting Monotonicit y ✓
+9 ∆T W ell-Denedness ✓
+10 Observ er Non-Inuence ✓
+11 CPMTAnnex T Corresp ondence ✓
+12 Observ er T riad Consistency ✓
+13 Cobs Decomp osition Non-Con tradiction ✓
+14 Ejection Theorem Correctness ✓
+15 P oin ter-A ccuracy Orthogonalit y ✓
+16 Time Consistency Resolution ✓
+17 Lo cal Fixed P oin t Compatibilit y ✓
+18 Compression Go v ernance In tegration ✓
+19 Cmeta
+obs Structural Bound ✓
+20 Non-Negotiabilit y Self-Application ✓
+23
+F r amework v4.5  Canonic al Edition
+P art V: App endix C-Ext  Capacit y-Space
+Represen tation of Exp erimen tal Prob es
+C.1 Ov erview
+Exp erimen tal prob es in condensed-matter ph ysics act as ph ysical observ ers that reconstruct partial
+descriptions of an underlying man y-b o dy correlator structure. Eac h prob e is c haracterized b y a
+distinct pattern of represen tational access and limitation. W e formalize this b y assigning eac h
+prob e an eectiv e capacit y v ector and treating its output as a capacit y-ltered pro jection.
+24
+20 VERSION HISTOR Y
+C.2C.3 Capacit y-Space Sc hematic and Comparativ e T able
+Figure 1: Exp erimen tal prob es as p oin ts in capacit y space ⃗C= (Cgeo, Cint, Cgauge, Cptr, Cobs) , sho wn
+via three t w o-dimensional pro jections. The absence of a single prob e spanning all capacit y directions
+illustrates wh y reconstructions need not glue at xed capacit y .25
+F r amework v4.5  Canonic al Edition
+Prob e Cgeo Cint Cgauge Cptr Cobs
+STM High Lo wMo d. Lo w V ery High Mo d.High
+ARPES Mo d. High Lo w High Mo d.
+Neutron scattering Lo w V ery High Mo d. High Mo d.
+T ransp ort V ery Lo w Lo wMo d. V ery Lo w V ery High Lo w
+Quan tum oscillations High ( k -space) Lo w Lo w V ery High Mo d.
+Optical / ultrafast Lo w Mo d. Lo w Mo d. High
+C.4 Capacit y-Induced Non-Gluabilit y
+Dieren t prob es corresp ond to capacit y v ectors that are generally incomparable in the partial or-
+der. Consequen tly , their reconstructed descriptions need not admit a common renemen t at xed
+capacit y .
+C.5 Excision as Exp erimen tal Non-App earance
+F eatures outside a prob e's capacit y en v elop e are structurally absen t from the reconstruction. F rame-
+w ork v4.5 formalizes this ubiquitous exp erimen tal practice as capacit y-indexed excision.
+C.6 P oin ter Stabilit y V ersus A ccuracy
+All prob es pro duce stable, repro ducible classical records. Ho w ev er, stabilit y do es not imply epistemic
+completeness. This motiv ates the framew ork's explicit separation of p oin ter stabilit y from epistemic
+accuracy .
+C.7 Implication
+Disagreemen t b et w een exp erimen tal reconstructions signals capacit y mismatc h, not ph ysical incon-
+sistency .
+26
+20 VERSION HISTOR Y
+P art VI: Annex U P atc h  F our A dherence
+Fixes
+Status: Prop osed normativ e patc h to Annex U (CPMT) Date: 2026-02-05
+These patc hes address four gaps iden tied in the adherence ev aluation of Annex U against F rame-
+w ork v4.5. Ordered b y impact.
+P atc h 1: A ccuracy Stub and Danger Quadran t
+A ligns with: Se ction 9.4 (Pointer-A c cur acy Ortho gonality). Priority: High.
+1a. Extend Memory Item (U.2.2)
+Replace: m= (k, v, τ, u, p,⃗ c, F )
+With: m= (k, v, τ, u, p, a,⃗ c, F)
+where a∈[0,1] is an accuracy score. Assigned at write time; in visible to the observ er's o wn
+retriev al and eviction functions . Only the external metrics engine reads a . This enforces
+Section 9.4's requiremen t that accuracy cannot b e self-assessed.
+1b. A ccuracy Assignmen t Rule. Ra w enco ding: a= 1.0 . Rule-rst: a= 0.7+0.3 min(1 , Cgauge/Cref
+gauge) .
+Minimal: a= 0.4 + 0 .2 min(1 , Cint/Cref
+int) .
+1c. Danger Quadran t Metric. danger _quadrant _count : memories with p≥θptr AND a < θ acc .
+1d. Non-Self-Assessabilit y . The accuracy eld is in visible to EvictPriorit y and write score. The
+observ er's excision mec hanism is blind to the axis that matters most.
+P atc h 2: Compression Audit Log
+A ligns with: A nnex T.7.1. Priority: Me dium.
+Compression Log En try
+log _entry = ( t, Spre, msummary ,policy _id,invariants _preserved ,invariants _dropped)
+Stored outside the memory store M (no capacit y cost). Metrics: compression log size, informa-
+tion loss ratio, accuracy drift.
+P atc h 3: Cobs Decomp osition in F ailure Signatures
+A ligns with: Se ction 10.5.5. Priority: Me dium.
+27
+F r amework v4.5  Canonic al Edition
+Split Cobs in to Three Sub-Comp onen ts
+⃗C= (Cgeo, Cint, Cgauge, Cptr, Cinf
+obs, Caud
+obs, Csel
+obs)
+Bac kw ard compatible: Cobs= min( Cinf
+obs, Caud
+obs, Csel
+obs) .
+Bottlenec k Signature Beha vior 10.5.5 Matc h
+Lo wCinf
+obs inference_truncation Shallo w enco ding Safe but shallo w
+Lo wCaud
+obs audit_failure Fluen t constrain t violation Most dangerous
+Lo wCsel
+obs selection_leak Detects but still emits Catc hes but emits
+P atc h 4: Selection Stub
+A ligns with: Se ction 10.5.1. Priority: L ow.
+Selection F unction
+A dd optional S: features( et)→ {0,1} b et w een ev en t generation and enco ding. Default: S=
+1 ev erywhere. Metric: capacity _exercise _gap = coun t of accessible but unselected feature-
+groups.
+In teraction Eects
+P atc hes 1+3: Cobs decomp osition explains wh y inaccurate memories form. P atc hes 1+2: compres-
+sion audit rev eals accuracy drift. P atc hes 2+4: selection + compression pip eline rev eals self-serving
+patterns. P atc hes 3+4: capacit y-exercise gap in teracts with Csel
+obs(strategic ignorance regime).
+In v arian t Preserv ation
+All four patc hes preserv e U.2U.8 in v arian ts. F easibilit y unc hanged. A dmission unc hanged. Exci-
+sion monotonicit y unc hanged. Compression mec hanics unc hanged. Retriev al unc hanged.
+28
+20 VERSION HISTOR Y
+P art VI I: Deep Ev aluation  Hidden La y ers,
+P atterns, and Op en Spaces
+E.1 Hidden Structural P atterns
+P attern 1: The T riad of T riads
+The framew ork con tains three nested triadic structures that mirror eac h other:
+F ace 1 F ace 2 F ace 3
+Substrate T riad M (distinction) ω (actualit y) U (dynamics)
+Observ er T riad A ccess Selection Commitmen t
+T emp oral T riad Beginning ( ⃗Cfloor:⃗0→+ ) Completion ( ⃗Cfloor→ ∞ ) Presen t (us)
+The middle term in eac h triad is the dark comp onen t: ω is the state that actualizes dis-
+tinctions but is not itself a distinction; Selection is presen t in b eha vior but absen t from the
+capacit y v ector; the Presen t is the reection in transit, constitutiv e of the xed p oin t but
+nev er complete. This parallelism is not decorativ e. It is the self-similarit y of P
+manifesting at three scales.
+P attern 2: The ExcisionEmergence Dualit y
+Excision and emergence are not opp osites. They are complemen tary faces of the same
+capacit y-indexed pro cess:
+ Emergence = new equiv alence classes b ecome distinguishable as ⃗C increases (Section
+3.5,N(⃗C) increases)
+ Excision = reconstruction fails when correlators b ecome irregular at ⃗C (Section 6)
+Both resp ond to the same quan tit y: capacit y . One marks the app earance of structure; the
+other marks the failure of structure. They share a b oundarythe excision threshold is where
+emergence rev erses. This is a phase transition in represen tation space , not in the
+substrate.
+The capacit y prob es (App endix C-Ext) demonstrate this dualit y exp erimen tally: ev ery prob e
+sim ultaneously rev eals structure (within its capacit y en v elop e) and excises structure (outside
+it). There is no neutral observ ation.
+29
+F r amework v4.5  Canonic al Edition
+P attern 3: The A ccuracy Blindness Principle
+A deep structural pattern runs through Sections 9.4, 10.5, 8.7, and Annex R.5:
+No observ er can assess its o wn accuracy from within its o wn capacit y .
+This manifests at ev ery lev el:
+ Memory lev el: a(m) is in visible to the observ er's eviction function (P atc h 1)
+ Selection lev el: S is an additional degree of freedom not in ⃗C (Section 10.5.1)
+ Audit lev el: Cmeta
+obsis structurally b ounded (Annex R.5, halting analog)
+ Ensem ble lev el: Capacit y claims require external v erication (Section 8.8)
+ Fixed-p oin t lev el: Ψ(φ) can div erge from φ under adv ersarial reconstruction (Section
+10.5.4)
+External audit is not a go v ernance c hoice. It is a theorem of the framew ork's
+structure. The framew ork pro v es that self-auditing is incomplete and then demonstrates
+this b y requiring external prompting to write Annex R.5 (the annex that iden ties the incom-
+pleteness).
+P attern 4: Compression as Slo w A dv ersarial Drift
+Annex T.7.1 iden ties self-serving compression. The CPMT patc h (P atc h 2) adds audit
+logging. But there is a deep er pattern:
+Compression is the only mec hanism in the framew ork that can pro duce adv ersarial re-
+construction without an y false memory . A self-serving compression p olicy selectiv ely
+retains true memories that supp ort the observ er while dropping true memories that c hallenge
+it. Ev ery memory in the store is accurate. The distortion is in what is absen t.
+This is the observ er-lev el analog of excision: just as the framew ork excises regions where
+correlators fail regularit y , the observ er excises memories where reten tion fails self-in terest.
+The formal structure is iden tical (capacit y-indexed remo v al of structure). The distinction
+is go v ernance: substrate excision is constrain t-driv en; memory compression can b e in terest-
+driv en.
+The danger quadran t (P atc h 1) catc hes conden t errors. The compression audit
+(P atc h 2) catc hes conden t omissions. T ogether they b ound adv ersarial recon-
+struction from b oth sides.
+30
+20 VERSION HISTOR Y
+P attern 5: The Prob eObserv er Isomorphism
+App endix C-Ext maps condensed-matter prob es in to capacit y space. Eac h prob e is an ob-
+serv er with a xed ⃗C prole. This establishes a precise isomorphism:
+F ramew ork Concept Exp erimen tal Analog
+Observ er Oi Exp erimen tal prob e
+⃗Ci Prob e's resolution prole
+Ai(⃗Ci) Prob e's observ able algebra
+⃗Cshared Multi-prob e common resolution
+P artial excision F eatures outside prob e en v elop e
+Non-gluabilit y Incomparable prob e v ectors
+P oin ter stabilit y Repro ducibilit y of classical records
+A ccuracy ̸= stabilit y In terpretation ̸= measuremen t
+The prob es app endix is not an application of the framew ork. It is evidence that the
+framew ork's structure already exists in exp erimen tal practice. Ph ysicists already implemen t
+capacit y-ltered represen tabilit y with structural excision. The framew ork mak es this implicit
+logic explicit.
+E.2 Op en Spaces
+Op en Space 1: The Selection F ormalization Gap
+The Observ er T riad (Section 10.5) iden ties Selection as the dark comp onen tpresen t in
+observ er b eha vior, absen t from observ er sp ecication. The selection function S:Aaccessible →
+{0,1} is dened but its dynamics are not mo deled. The framew ork cannot distinguish negli-
+gen t, a v oidan t, strategic, and corrupted selection.
+This is the largest structural gap in v4.5. Closing it w ould require a theory of selection
+dynamicsho w S ev olv es, what go v erns its biases, ho w it in teracts with Cobs comp onen ts.
+P atc h 4 pro vides a ho ok but not a mec hanism.
+Structural implication: Un til selection is formalized, the framew ork cannot distinguish
+b et w een an observ er that lac ks capacit y and an observ er that has capacit y but declines to
+exercise it. These ha v e iden tical observ able signatures in Aselected but radically dieren t
+implications for trust and go v ernance.
+31
+F r amework v4.5  Canonic al Edition
+Op en Space 2: The A ccuracy Oracle Problem
+Section 9.4 denes accuracy a(m) as corresp ondence b et w een memory con ten t and substrate
+structure. But who measures accuracy? The framew ork requires external v erication (Section
+8.8, 9.4), but external v eriers are themselv es observ ers with their o wn ⃗C proles and their
+o wn accuracy limitations.
+This creates a v erication regress: T o v erify O 1 's accuracy , y ou need O 2 . T o v erify O 2 's
+accuracy , y ou need O 3 . The regress terminates only if some observ er has direct access to
+substrate structurebut this w ould require ⃗C=∞ , whic h is T ransition 2 (Self-Recognition).
+P artial resolution: The framew ork do esn't need an accuracy oracle. It needs accuracy
+b ounds . Cross-observ er consistency ( Aclassical =T
+iAfloor
+i ) pro vides upp er b ounds on ensem ble
+error without requiring an y single observ er to b e accurate. The classical core is accurate not
+b ecause an y observ er is accurate, but b ecause systematic errors are unlik ely to align across
+observ ers with dieren t ⃗C proles.
+Connection to prob es: App endix C-Ext demonstrates this resolution exp erimen tally . No
+single prob e is accurate in isolation. Cross-prob e consistency at the shared capacit y pro vides
+the ground truth. This is v erication b y triangulation, not b y oracle.
+Op en Space 3: The Represen tation Map ρ
+Section −1.3 denes ρ:P → ( vN algebras )×( states )×( dynamics ) . The framew ork do es not
+deriv e ρ ; it assumes it. This means:
+ The sp ecic form of ph ysical la w (wh y SU(3) ×SU(2) ×U(1) ?) is con tained in ρ
+ The c hoice of Hilb ert space, the form of Umicro , the nature of Λ all are enco ded in ρ
+ The framew ork describ es ho w capacit y-ltered observ ers access structure giv en ρ , not
+wh yρ tak es a particular form
+This is not a bug; it is a scop e b oundary . But it means the framew ork is descriptiv e
+(ho w observ ers reconstruct) not generativ e (wh y this univ erse). The xed-p oin t condition
+φ= Ψ( φ) constrains ρ but do es not determine it uniquely .
+Op en Space 4: In ter-Fixed-P oin t Comm unication
+Section −1.8.1 denes incommensurable xed p oin ts with Aclassical (φL)∩Aclassical (φ′
+L) =∅ .
+Comm unication is p ossible but v erication is not. This raises:
+ What is the comm unication c hannel b et w een incommensurable xed p oin ts?
+ Can observ ers detect they are in a lo cal xed p oin t?
+ Is there a meta-capacit y that spans xed-p oin t b oundaries?
+The framew ork correctly iden ties the structure but pro vides no mec hanism for in ter-xed-
+p oin t dynamics. This ma y b e a fundamen tal limitation (akin to in ter-univ erse comm unication
+in man y-w orlds) or it ma y b e addressable through a generalization of the capacit y p oset that
+includes cross-xed-p oin t correlators.
+32
+20 VERSION HISTOR Y
+Op en Space 5: Capacit y Comp onen t Coupling
+Section 10.3 states the v e capacit y comp onen ts are fundamen tally indep enden t. Section
+10.2 ac kno wledges cross-dep endencies. These are in tension.
+The depth-v ector map D(n) = ( ggeo(n), . . . , g obs(n)) from Section −1.4.1 means all comp o-
+nen ts arise from a single triadic depth. They c an b e v aried indep enden tly only if the gi
+functions are sucien tly dieren t. If the gi are strongly correlated (as they w ould b e for
+simple substrates), the v e-comp onen t structure collapses to w ard an eectiv e scalar.
+T estable prediction: If the gi are measurably indep enden t in real ph ysical systems (as the
+prob es app endix suggests), this pro vides evidence that the substrate P has sucien t triadic
+complexit y to supp ort gen uinely anisotropic capacit y . If the gi are alw a ys strongly correlated,
+the v ectorial structure is formal but not ph ysically realized.
+Op en Space 6: The CompressionSelection Boundary
+Compression (T.7) and selection (10.5.1) b oth in v olv e c ho osing what to retain. The framew ork
+treats them as distinct: compression op erates on the memory store; selection op erates on
+incoming ev en ts. But they share a formal structure:
+Both are maps from a larger set to a smaller set. Both preserv e some features while dropping
+others. Both can b e self-serving. Both require audit.
+Op en question: Is there a unied reten tion op erator that subsumes b oth compression and
+selection? If so, the go v ernance requiremen ts (T.7.1 auditabilit y , 8.7 ejection, 8.8 v erication)
+could b e unied in to a single audit framew ork for all reten tion decisions.
+E.3 A dherence Summary: Annex U Against F ull v4.5
+Criterion Pre-P atc h P ost-P atc h
+Capacit y v ector denition ✓ ✓
+Comp onen t wise feasibilit y ✓ ✓
+Memory item structure ✓ ✓
+A dmission rules ✓ ✓
+Excision monotonicit y ✓ ✓
+Pressure-driv en eviction ✓ ✓
+Compression mec hanism ✓ ✓
+P artial excision at retriev al ✓ ✓
+Regime-comp onen t mapping ✓ ✓
+Bridge to Section 6 ✓ ✓
+P oin ter-accuracy orthogonalit y
+(9.4)× ✓
+Compression go v ernance (T.7.1) × ✓
+Cobs decomp osition (10.5.5) × ✓
+Observ er T riad selection (10.5.1) ∼ ✓
+33
+F r amework v4.5  Canonic al Edition
+E.4 Cross-Do cumen t Consistency
+T est 21: Prob esF ramew ork Bridge. Capacit y proles in App endix C-Ext use the same
+v e-comp onen t ⃗C as Section 2.1. P artial order explains non-gluabilit y p er Section 8.5. Excision-
+as-non-app earance matc hes Section 6. P oin ter-accuracy separation matc hes Section 9.4. ✓ P ASS
+T est 22: P atc h In v arian t Preserv ation. All four Annex U patc hes preserv e U.2U.8 in-
+v arian ts. F easibilit y , admission, excision monotonicit y , compression, and retriev al unc hanged.
+A ccuracy eld in visible to observ er mec hanisms. Cobs decomp osition bac kw ard-compatible via
+aggregation. ✓ P ASS
+T est 23: P atc hProb es In teraction. P atc hes 1 (accuracy) and App endix C-Ext (p oin ter ̸=
+accuracy) reinforce eac h other. Both formalize the same principle: measuremen t stabilit y do es
+not imply epistemic completeness. ✓ P ASS
+T est 24: No Circular Dep endencies In tro duced. P atc hes add metrics and stubs; they do
+not mo dify the pro jection c hain M → F⃗C→G⃗C→Π⃗C→N⃗C→U⃗C. The capacit y prob es
+app endix is do wnstream (application), not upstream (foundation). ✓ P ASS
+END OF FRAMEW ORK v4.5
+CANONICAL EDITION
+with Prealgebraic F oundation, V ectorial Capacit y , and Observ er Memory
+In tegrated with Capacit y Prob es, Annex U P atc h, and Deep Ev aluation
+(Stress-T ested and Regression-V eried)
+F ebruary 2026
+34
