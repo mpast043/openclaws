@@ -12,8 +12,9 @@ from .allocators import (
     ObserverAllocator,
 )
 from .substrate import SubstrateState, ResourceMetrics
+from .substrate_monitor import SubstrateMonitor, create_real_substrate
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = [
     "CapacityKernel",
     "CapacityVector",
@@ -26,4 +27,6 @@ __all__ = [
     "ObserverAllocator",
     "SubstrateState",
     "ResourceMetrics",
+    "SubstrateMonitor",
+    "create_real_substrate",
 ]

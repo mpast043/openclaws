@@ -6,6 +6,9 @@ from datetime import datetime, timedelta
 import numpy as np
 from numpy.typing import NDArray
 
+from .substrate import SubstrateState
+from .substrate_monitor import SubstrateMonitor
+
 
 @dataclass(frozen=True)
 class CapacityVector:
@@ -93,11 +96,22 @@ class CapacityKernel:
             pass
     """
     
-    def __init__(self, d_max: int = 4, k_gluing: float = 2.0):
+    def __init__(
+        self,
+        d_max: int = 4,
+        k_gluing: float = 2.0,
+        use_real_substrate: bool = False,
+        monitor: Optional[SubstrateMonitor] = None
+    ):
         self.d_max = d_max
         self.k_gluing = k_gluing
         self._tokens: Dict[str, CapacityToken] = {}
         self._last_gate_state: Optional[GateState] = None
+        
+        # Substrate measurement
+        self._use_real_substrate = use_real_substrate
+        self._monitor = monitor
+        self._substrate_state: Optional[SubstrateState] = None
         
     def request_capacity(
         self,
@@ -146,18 +160,78 @@ class CapacityKernel:
         return True
     
     def _evaluate_gates(self, C: CapacityVector) -> GateState:
-        """Evaluate all four Step 2 gates."""
-        # TODO: Actually measure substrate state
-        # For now, return "all pass" as placeholder
+        """Evaluate all four Step 2 gates using real substrate measurements."""
         now = datetime.now()
         
-        return GateState(
-            fit=GateResult("fit", True, 0.017, 0.25, 0.233),
-            gluing=GateResult("gluing", True, 0.002, 0.004, 0.002),
-            uv=GateResult("uv", True, 0.01, 3.8, 3.79),
-            isolation=GateResult("isolation", True, 0.005, 0.15, 0.145),
-            timestamp=now
+        # Get substrate state - real or sample
+        if self._use_real_substrate:
+            if self._monitor:
+                substrate = self._monitor.current_state or self._monitor.measure_now()
+            else:
+                # Create one-shot measurement
+                from .substrate_monitor import create_real_substrate
+                substrate = create_real_substrate()
+        else:
+            # Fallback to sample data
+            substrate = SubstrateState.sample()
+        
+        self._substrate_state = substrate
+        
+        # Compute thresholds based on capacity request and substrate
+        # Thresholds tighten as capacity request increases
+        C_geo_val = C.C_geo or 0.5
+        C_int_val = C.C_int or 0.5
+        
+        # Fit threshold: tighter for high geometric capacity
+        fit_thresh = 0.25 * (1.0 - C_geo_val * 0.5)
+        
+        # Gluing threshold: system-dependent, scales with 1/sqrt(N_geo)
+        gluing_thresh = self.k_gluing / np.sqrt(substrate.n_geo)
+        
+        # UV threshold: depends on capacity budget
+        # High C_int means more interaction weight, so lower threshold
+        lambda1_thresh = 3.84 * (1.0 - C_int_val * 0.5)
+        lambda_int_thresh = 20.0 * lambda1_thresh  # Proportional to λ₁
+        
+        # Isolation threshold: tighter for high capacity
+        isolation_thresh = 0.15 * (1.0 - max(C_geo_val, C_int_val) * 0.3)
+        
+        # Evaluate each gate
+        fit = GateResult(
+            "fit",
+            substrate.fit_error < fit_thresh,
+            substrate.fit_error,
+            fit_thresh,
+            fit_thresh - substrate.fit_error
         )
+        
+        gluing = GateResult(
+            "gluing",
+            substrate.gluing_delta < gluing_thresh,
+            substrate.gluing_delta,
+            gluing_thresh,
+            gluing_thresh - substrate.gluing_delta
+        )
+        
+        # UV gate passes if both eigenvalue checks pass
+        uv_pass = substrate.lambda1 < lambda1_thresh and substrate.lambda_int < lambda_int_thresh
+        uv = GateResult(
+            "uv",
+            uv_pass,
+            substrate.lambda1,
+            lambda1_thresh,
+            lambda1_thresh - substrate.lambda1
+        )
+        
+        isolation = GateResult(
+            "isolation",
+            substrate.isolation_metric < isolation_thresh,
+            substrate.isolation_metric,
+            isolation_thresh,
+            isolation_thresh - substrate.isolation_metric
+        )
+        
+        return GateState(fit, gluing, uv, isolation, now)
     
     def _stabilize(self, gates: GateState) -> None:
         """Take corrective action when gates fail."""
@@ -173,6 +247,11 @@ class CapacityKernel:
             print("  → Rate limiting")
         if "isolation" in failing:
             print("  → Rescheduling workloads")
+    
+    @property
+    def substrate_state(self) -> Optional[SubstrateState]:
+        """Last measured substrate state (available when using real substrate)."""
+        return self._substrate_state
     
     @property
     def gate_state(self) -> Optional[GateState]:
