@@ -20,8 +20,19 @@ from .step3_truth import (
     PredictionOutcome,
     create_truth_infrastructure,
 )
+from .distributed import (
+    CapacityNode,
+    NodeIdentity,
+    NodeCapacity,
+    ClusterCapacityView,
+    DistributedAllocation,
+    GossipProtocol,
+    ConsensusAllocator,
+    DistributedGateMonitor,
+    create_cluster,
+)
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = [
     "CapacityKernel",
     "CapacityVector",
@@ -41,4 +52,13 @@ __all__ = [
     "OutcomeTracker",
     "PredictionOutcome",
     "create_truth_infrastructure",
+    "CapacityNode",
+    "NodeIdentity",
+    "NodeCapacity",
+    "ClusterCapacityView",
+    "DistributedAllocation",
+    "GossipProtocol",
+    "ConsensusAllocator",
+    "DistributedGateMonitor",
+    "create_cluster",
 ]
