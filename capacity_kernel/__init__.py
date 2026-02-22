@@ -1,0 +1,29 @@
+"""Capacity-Governed Systems Platform - Phase 1 Kernel
+
+A lightweight runtime for enforcing capacity constraints on local resources.
+"""
+
+from .kernel import CapacityKernel, CapacityVector
+from .gates import GateMonitor, GateResult, GateState
+from .allocators import (
+    DimensionAllocator,
+    CouplingAllocator,
+    PointerAllocator,
+    ObserverAllocator,
+)
+from .substrate import SubstrateState, ResourceMetrics
+
+__version__ = "0.1.0"
+__all__ = [
+    "CapacityKernel",
+    "CapacityVector",
+    "GateMonitor",
+    "GateResult",
+    "GateState",
+    "DimensionAllocator",
+    "CouplingAllocator",
+    "PointerAllocator",
+    "ObserverAllocator",
+    "SubstrateState",
+    "ResourceMetrics",
+]
