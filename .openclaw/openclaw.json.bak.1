@@ -1,34 +1,157 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.2.9",
-    "lastTouchedAt": "2026-02-13T15:08:29.071Z"
+    "lastTouchedVersion": "2026.2.21-2",
+    "lastTouchedAt": "2026-02-21T22:33:09.397Z"
   },
   "wizard": {
-    "lastRunAt": "2026-02-13T15:08:29.061Z",
-    "lastRunVersion": "2026.2.9",
-    "lastRunCommand": "doctor",
+    "lastRunAt": "2026-02-21T19:03:30.379Z",
+    "lastRunVersion": "2026.2.21-2",
+    "lastRunCommand": "onboard",
     "lastRunMode": "local"
   },
-  "commands": {
-    "native": "auto",
-    "nativeSkills": "auto"
-  },
-  "gateway": {
-    "port": 18789,
-    "auth": {
-      "mode": "token",
-      "token": "750336a364fe2d80fb9d25cabf17c58aaf301a2a61f22cf6"
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "custom-127-0-0-1-11434": {
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "ollama",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2.5:cloud",
+            "name": "kimi-k2.5:cloud (Custom Provider)",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 64000,
+            "maxTokens": 64000
+          }
+        ]
+      }
     }
   },
   "agents": {
     "defaults": {
-      "maxConcurrent": 4,
-      "subagents": {
-        "maxConcurrent": 8
+      "model": {
+        "primary": "custom-127-0-0-1-11434/kimi-k2.5:cloud"
+      },
+      "models": {
+        "custom-127-0-0-1-11434/kimi-k2.5:cloud": {
+          "alias": "KIMI"
+        }
+      },
+      "workspace": "/Users/meganpastore/Clawdbot/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
       }
     }
   },
-  "messages": {
-    "ackReactionScope": "group-mentions"
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "whatsapp": {
+      "dmPolicy": "allowlist",
+      "selfChatMode": true,
+      "allowFrom": [
+        "+15707514200"
+      ],
+      "groupPolicy": "allowlist",
+      "debounceMs": 0,
+      "mediaMaxMb": 50
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "9ecb27c604cd185538e263d603b6250a85620eb5b2c983b2"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "skills": {
+    "entries": {
+      "clawhub": {
+        "enabled": true
+      },
+      "coding-agent": {
+        "enabled": true
+      },
+      "github": {
+        "enabled": true
+      },
+      "healthcheck": {
+        "enabled": true
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": true
+      },
+      "session-logs": {
+        "enabled": true
+      },
+      "skill-creator": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      }
+    }
   }
 }

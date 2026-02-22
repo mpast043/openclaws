@@ -1,0 +1,27 @@
+{
+  "providers": {
+    "custom-127-0-0-1-11434": {
+      "baseUrl": "http://127.0.0.1:11434/v1",
+      "apiKey": "ollama",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "kimi-k2.5:cloud",
+          "name": "kimi-k2.5:cloud (Custom Provider)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 64000,
+          "maxTokens": 64000
+        }
+      ]
+    }
+  }
+}

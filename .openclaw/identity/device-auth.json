@@ -1,16 +1,14 @@
 {
   "version": 1,
-  "deviceId": "f7fe7c22bbf7ed45322e37e85494de032f01ec034964209197a279a58650c517",
+  "deviceId": "eee2ba558a225f234b26a0db7f980468e020d225da489dd909033ab7d2a17d7e",
   "tokens": {
     "operator": {
-      "token": "e96b9c3865d2484b87d93a3707962050",
+      "token": "VGqjtHGEdwYHbAETf0qXbZVYsrRzO9nvG--aHjooKSo",
       "role": "operator",
       "scopes": [
-        "operator.admin",
-        "operator.approvals",
-        "operator.pairing"
+        "operator.read"
       ],
-      "updatedAtMs": 1770997316698
+      "updatedAtMs": 1771729414797
     }
   }
 }

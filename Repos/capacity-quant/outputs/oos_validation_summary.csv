@@ -1,0 +1,4 @@
+Market,Opt_Cap,Train_Sharpe,Test_Sharpe,Decay,Status
+Bitcoin,0.05,5.160,2.606,49.5%,✓ ROBUST
+Ethereum,0.15,5.386,4.717,12.4%,✓ ROBUST
+SPY ETF,0.25,6.886,2.857,58.5%,✗ OVERFIT
