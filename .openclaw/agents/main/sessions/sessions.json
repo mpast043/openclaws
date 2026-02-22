@@ -1,7 +1,7 @@
 {
   "agent:main:main": {
     "sessionId": "30be58d3-dac5-4845-99a7-c9536d637445",
-    "updatedAt": 1771789411593,
+    "updatedAt": 1771789486410,
     "systemSent": true,
     "abortedLastRun": false,
     "chatType": "direct",
@@ -160,7 +160,7 @@
     "model": "kimi-k2.5:cloud",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1771789388885,
+      "generatedAt": 1771789411641,
       "sessionId": "30be58d3-dac5-4845-99a7-c9536d637445",
       "sessionKey": "agent:main:main",
       "provider": "custom-127-0-0-1-11434",
@@ -417,12 +417,12 @@
         ]
       }
     },
-    "totalTokens": 33051,
+    "totalTokens": 40224,
     "contextTokens": 64000,
     "memoryFlushAt": 1771789315823,
     "memoryFlushCompactionCount": 2,
-    "inputTokens": 65935,
-    "outputTokens": 115,
+    "inputTokens": 532633,
+    "outputTokens": 3032,
     "cacheRead": 0,
     "cacheWrite": 0
   }
