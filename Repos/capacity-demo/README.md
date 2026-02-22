@@ -13,6 +13,10 @@ pip install -r requirements.txt
 # Run the experiment (default: 3D lattice, N=64, 30 capacity steps)
 python scripts/run_capacity_dimshift.py
 
+# Run multi-axis capacity sweep (C_geo + C_int combined)
+python scripts/run_multi_axis_sweep.py --D 3 --N 64 --grid \
+  --C-geo 0.5 1.0 --C-int 0.0 0.5 1.0 --output-dir ./outputs/
+
 # Or start the interactive web interface
 python app.py
 # Then open http://localhost:5000 in your browser
@@ -31,6 +35,29 @@ budget `d_nom = C_geo * D`, which activates dimensions sequentially:
 | 0.50  |            1.50 |                     2 |                     ~2 |
 | 2/3   |            2.00 |                     2 |                     ~2 |
 | 1.00  |            3.00 |                     3 |                     ~3 |
+
+### Multi-Axis Capacity
+
+Framework v4.5 introduces the capacity vector `⃗C = (C_geo, C_int, C_gauge, C_ptr, C_obs)` where:
+
+| Axis | Description | Status |
+|------|-------------|--------|
+| C_geo | Geometric dimension reconstruction | ✅ Implemented |
+| C_int | Interaction tail weighting (spectral gap) | ✅ Implemented |
+| C_gauge | Symmetry pattern visibility | 🟡 Reserved |
+| C_ptr | Pointer state stability | 🟡 Reserved |
+| C_obs | Observer inferential resolution | 🟡 Reserved |
+
+Run multi-axis sweeps with automatic gate validation:
+
+```bash
+python scripts/run_multi_axis_sweep.py --D 3 --N 64 --grid \
+  --C-geo 0.33 0.66 1.0 --C-int 0.0 0.5 1.0 \
+  --output-dir ./outputs/multi_axis
+```
+
+Produces gate-compatible metrics for Framework Step 2 (fit, gluing, UV, isolation).
+See [docs/MULTI_AXIS_SUMMARY.md](docs/MULTI_AXIS_SUMMARY.md) for implementation details.
 
 Within a scan, nothing else changes — same lattice, same eigenvalues, same
 diffusion equation, same analysis pipeline. Only `C_geo` varies across
@@ -177,11 +204,14 @@ capacity-demo/
 │   │                            #     return_probability(), spectral_dimension()
 │   ├── sweep.py                 #   SweepConfig, SweepResult, run_capacity_sweep(),
 │   │                            #     write_artifacts()
+│   ├── multi_axis_capacity.py   #   CapacityVector, capacity_weights_combined(),
+│   │                            #     compute_capacity_metrics(), make_selection_records()
 │   ├── plotting.py              #   plot_heatmap(), plot_representative_curves(),
 │   │                            #     plot_phase_diagram(), save_all_figures()
 │   └── theorem.py               #   8 formal theorems with machine-checkable verification
 ├── scripts/
 │   ├── run_capacity_dimshift.py # Canonical experiment entrypoint
+│   ├── run_multi_axis_sweep.py  # Multi-axis capacity sweep with gates
 │   ├── run_robustness_suite.py  # Multi-(D,N) robustness suite
 │   └── run_stress_test.py       # Stress test across (D,N) matrix
 ├── notebooks/
@@ -192,6 +222,7 @@ capacity-demo/
 │   └── test_theorem_validation.py  # Formal theorem validation (12 tests)
 ├── docs/
 │   ├── EXPERIMENT_CAPACITY_DIMSHIFT.md  # Detailed experiment documentation
+│   ├── MULTI_AXIS_SUMMARY.md    # Multi-axis capacity implementation guide
 │   └── THEOREMS.md              # Theorem-to-test mapping and tier classification
 ├── app.py                       # Flask web server (imports dimshift)
 ├── static/
