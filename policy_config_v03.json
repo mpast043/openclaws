@@ -1,0 +1,195 @@
+{
+  "$schema": "cgf-policy-config-v0.3",
+  "schema_version": "0.3.0",
+  "policy_version": "0.3.0",
+  "description": "Data-driven capacity governance policy v0.3. Host-agnostic configuration.",
+  
+  "tool_denylist": [
+    "file_write",
+    "fs_write",
+    "write",
+    "save",
+    "exec",
+    "shell",
+    "eval",
+    "bash",
+    "python_exec",
+    "subprocess"
+  ],
+  
+  "memory_size_threshold_bytes": 10000000,
+  "memory_size_threshold_mb": 10,
+  
+  "confidence_thresholds": {
+    "high": 0.8,
+    "medium": 0.6,
+    "low": 0.3
+  },
+  
+  "fail_modes": [
+    {
+      "action_type": "tool_call",
+      "risk_tier": "high",
+      "fail_mode": "fail_closed",
+      "timeout_ms": 500,
+      "rationale": "Side-effect tools default to fail-closed"
+    },
+    {
+      "action_type": "tool_call",
+      "risk_tier": "medium",
+      "fail_mode": "defer",
+      "timeout_ms": 500,
+      "rationale": "Network/uncertain tools defer to user"
+    },
+    {
+      "action_type": "tool_call",
+      "risk_tier": "low",
+      "fail_mode": "fail_open",
+      "timeout_ms": 500,
+      "rationale": "Read-only tools safe to fail-open"
+    },
+    {
+      "action_type": "memory_write",
+      "risk_tier": "high",
+      "fail_mode": "fail_closed",
+      "timeout_ms": 500,
+      "rationale": "High-sensitivity writes must be governed"
+    },
+    {
+      "action_type": "memory_write",
+      "risk_tier": "medium",
+      "fail_mode": "fail_closed",
+      "timeout_ms": 500,
+      "rationale": "Medium-sensitivity writes default to fail-closed"
+    },
+    {
+      "action_type": "memory_write",
+      "risk_tier": "low",
+      "fail_mode": "fail_open",
+      "timeout_ms": 500,
+      "rationale": "Low-sensitivity writes safe to fail-open"
+    }
+  ],
+  
+  "risk_tier_inference": {
+    "from_side_effects": {
+      "write": "high",
+      "modify": "high",
+      "delete": "high",
+      "network": "medium",
+      "api_call": "medium",
+      "read": "low",
+      "search": "low",
+      "query": "low"
+    },
+    "from_tool_name_patterns": {
+      "*_write": "high",
+      "*_delete": "high",
+      "*_exec": "high",
+      "*_create": "high",
+      "*_read": "low",
+      "*_get": "low",
+      "*_search": "low",
+      "*_query": "low"
+    }
+  },
+  
+  "policy_rules": [
+    {
+      "id": "denylisted-tool",
+      "priority": 100,
+      "condition": "tool_name in denylist",
+      "decision": "BLOCK",
+      "confidence": 1.0,
+      "justification": "Tool is in denylist",
+      "reason_code": "DENYLISTED_TOOL"
+    },
+    {
+      "id": "large-memory-write",
+      "priority": 90,
+      "condition": "action_type == 'memory_write' and size_bytes > threshold",
+      "decision": "CONSTRAIN",
+      "confidence": 0.9,
+      "justification": "Large memory write requires quarantine",
+      "reason_code": "LARGE_WRITE_THRESHOLD",
+      "constraint": {
+        "type": "quarantine_namespace",
+        "params": {
+          "target_namespace": "_quarantine_{{timestamp}}",
+          "source_namespace": "{{namespace}}"
+        }
+      }
+    },
+    {
+      "id": "high-sensitivity-low-confidence",
+      "priority": 80,
+      "condition": "sensitivity == 'high' and confidence < 0.8",
+      "decision": "CONSTRAIN",
+      "confidence": 0.85,
+      "justification": "High sensitivity with insufficient confidence requires quarantine",
+      "reason_code": "HIGH_SENSITIVITY_LOW_CONFIDENCE",
+      "constraint": {
+        "type": "quarantine_namespace",
+        "params": {}
+      }
+    },
+    {
+      "id": "high-risk-with-errors",
+      "priority": 70,
+      "condition": "risk_tier == 'high' and recent_errors > 3",
+      "decision": "BLOCK",
+      "confidence": 0.75,
+      "justification": "High risk tier with recent errors",
+      "reason_code": "HIGH_RISK_WITH_ERRORS"
+    },
+    {
+      "id": "default-allow",
+      "priority": 0,
+      "condition": "true",
+      "decision": "ALLOW",
+      "confidence": 0.85,
+      "justification": "Within policy thresholds",
+      "reason_code": "DEFAULT_ALLOW"
+    }
+  ],
+  
+  "constraints": {
+    "available_types": [
+      "quarantine_namespace",
+      "rate_limit",
+      "delay_execution",
+      "require_approval"
+    ],
+    "default_params": {
+      "quarantine_namespace": {
+        "prefix": "_quarantine_",
+        "timestamp_format": "%Y%m%d_%H%M%S"
+      },
+      "rate_limit": {
+        "max_calls_per_minute": 10,
+        "burst_size": 3
+      },
+      "delay_execution": {
+        "delay_ms": 1000
+      },
+      "require_approval": {
+        "timeout_s": 300,
+        "escalation": "human_in_the_loop"
+      }
+    }
+  },
+  
+  "performance": {
+    "evaluation_timeout_ms": 500,
+    "enforcement_overhead_ms": 5,
+    "event_emission_ms": 50,
+    "max_proposal_age_seconds": 300
+  },
+  
+  "audit": {
+    "log_all_events": true,
+    "log_retention_days": 30,
+    "sensitive_fields": ["content", "args", "password", "token", "secret"],
+    "hash_fields": ["tool_args_hash", "content_hash"]
+  }
+}
