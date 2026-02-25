@@ -1,124 +1,92 @@
-# Capacity Governance Framework (CGF)
+# Capacity Governance Framework (CGF) — Core Runtime
 
-Multi-host capacity governance platform with universal adapter contract.
+> **Purpose**: This repository (`openclaws`) contains the **core capacity platform runtime (P0–P5)**.
+> 
+> **Governance, adapters, and policy engine** live in: **https://github.com/mpast043/host-adapters**
+> 
+> **Note**: The CGF versions in this repo (v0.3) are historical. Active development moved to host-adapters.
+
+## Repo Map
+
+| Repo | Purpose | Latest Tag |
+|------|---------|------------|
+| **openclaws** | Kernel runtime (P0–P5) | v0.8.0 |
+| **host-adapters** | Governance + Policy Engine (P6+) | [v0.5.0](https://github.com/mpast043/host-adapters) |
 
 ## Overview
 
-The Capacity Governance Framework (CGF) provides runtime enforcement of capacity constraints across distributed systems. It implements a universal host adapter contract that allows any system (OpenClaw, LangGraph, custom agents) to integrate with the same governance infrastructure.
+The Capacity Governance Framework (CGF) provides runtime enforcement of capacity constraints across distributed systems. **This repository contains the foundational runtime only.**
 
-**Current Version**: 0.3.0  
-**Status**: Multi-host platform validated (OpenClaw + LangGraph)
+**Current Version**: 0.3.0 (historical)  
+**Status**: Core runtime complete (P0–P5)
 
 ## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                        HOST SYSTEMS                          │
-├─────────────────┬─────────────────┬─────────────────────────┤
-│   OpenClaw      │   LangGraph     │      Future Hosts       │
-│   (Host #1)     │   (Host #2)     │                         │
-├─────────────────┴─────────────────┴─────────────────────────┤
-│                    HOST ADAPTER CONTRACT                     │
-│              (observe_proposal, enforce_*, report)          │
+│                    GOVERNANCE LAYER (P6+)                    │
+│            → https://github.com/mpast043/host-adapters      │
 ├─────────────────────────────────────────────────────────────┤
-│                    CGF SERVER (REST API)                     │
-│  POST /v1/evaluate    → Governance decisions                │
-│  POST /v1/register    → Adapter registration                │
-│  POST /v1/outcomes    → Execution reporting                 │
-├─────────────────────────────────────────────────────────────┤
-│              DATA-DRIVEN POLICY (JSON Config)                │
-│         Fail modes, risk tiers, denylist, thresholds        │
+│                    CORE RUNTIME (P0–P5)                      │
+│                    [THIS REPOSITORY]                         │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │   Host      │  │    DB       │  │       GPU           │  │
+│  │ Substrate   │  │   Pool      │  │   Substrate         │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
+│  │  Network    │  │   Memory    │  │    Recovery          │  │
+│  │ Substrate   │  │  Library    │  │    (HA)              │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## Key Features
+## What Lives Where
 
-- **Multi-Host Support**: OpenClaw, LangGraph, and extensible to any host
-- **Backward Compatible**: Schema v0.3 accepts v0.2.x payloads
-- **Data-Driven Policy**: Configure via JSON (no code changes)
-- **19 Canonical Events**: Full audit trail across all hosts
-- **Cross-Host Compliance**: Same scenarios, comparable ReplayPacks
-- **Fail Modes**: Configurable per (action_type, risk_tier)
+### In This Repo (openclaws) — P0–P5
+- Substrate monitoring (`substrate_monitor.py`)
+- Step 3 Truth ledger
+- Distributed coordination (gossip/consensus)
+- HA/recovery infrastructure
+- Network substrate
+- Memory library (patterns/queries)
+
+### In host-adapters — P6+
+- Host Adapter v1 SPEC
+- OpenClawAdapter v0.2
+- LangGraphAdapter v0.1
+- CGF Server v0.5+ (with Policy Engine v1.0)
+- Policy Engine (deterministic, explainable)
+- Contract compliance suite
 
 ## Quick Start
 
-### 1. Start CGF Server
-
+See **host-adapters** repo for current governance integration:
 ```bash
-python cgf_server_v03.py
-# Server runs on http://127.0.0.1:8080
+git clone https://github.com/mpast043/host-adapters.git
+cd host-adapters
+./tools/run_contract_suite.sh
 ```
 
-### 2. Run Compliance Tests
+## Historical Files
 
-```bash
-# Test both hosts against same scenarios
-python contract_compliance_tests.py
+The CGF v0.3 files in this repo (`cgf_server_v03.py`, adapters, etc.) are preserved under `/archive/` for reference. They are **superseded** by host-adapters v0.5.0.
 
-# Output: contract_compliance_report.json
-```
+## Phase Status
 
-### 3. Validate Schemas
-
-```bash
-# Lint event logs
-python schema_lint.py --dir ./cgf_data/
-
-# Compare hosts
-python schema_lint.py --compare openclaw/ langgraph/
-```
-
-## File Structure
-
-| File | Purpose |
-|------|---------|
-| `cgf_schemas_v03.py` | Schema definitions with backward compatibility |
-| `cgf_server_v03.py` | CGF REST API server |
-| `policy_config_v03.json` | Data-driven policy configuration |
-| `openclaw_adapter_v02.py` | OpenClaw host adapter |
-| `langgraph_adapter_v01.py` | LangGraph host adapter |
-| `schema_lint.py` | JSONL validation and event ordering checker |
-| `contract_compliance_tests.py` | Cross-host compliance test suite |
-
-## Schema Versions
-
-| Version | Status | Compatibility |
-|---------|--------|---------------|
-| 0.2.0 | ✅ Supported | Native |
-| 0.2.x | ✅ Supported | Patch versions accepted |
-| 0.3.0 | ✅ Current | Native |
-| < 0.2.0 | ❌ Rejected | Upgrade required |
-
-## Policy Configuration
-
-Edit `policy_config_v03.json`:
-
-```json
-{
-  "tool_denylist": ["file_write", "exec", "shell"],
-  "fail_modes": [
-    {"action_type": "tool_call", "risk_tier": "high", "fail_mode": "fail_closed"},
-    {"action_type": "tool_call", "risk_tier": "low", "fail_mode": "fail_open"}
-  ]
-}
-```
-
-## Host Comparison
-
-| Feature | OpenClaw | LangGraph |
-|---------|----------|-----------|
-| Session ID | `session_key` | `thread_id` |
-| Interception | gateway-cli | `GovernedToolNode` |
-| Action Types | tool_call, memory_write | tool_call |
-| Events | 19 canonical | 19 canonical |
-
-## Next Steps
-
-- [ ] Execute compliance tests with running server
-- [ ] Generate ReplayPacks for both hosts
-- [ ] Add third host (e.g., custom Python agent)
-- [ ] Implement P7 Agent SDK
-- [ ] Build Policy Engine (P8)
+| Phase | Component | Location | Status |
+|-------|-----------|----------|--------|
+| P0 | Real Substrate | openclaws | ✅ Complete |
+| P1 | Step 3 Truth | openclaws | ✅ Complete |
+| P1.5 | Gate Calibration | openclaws | ✅ Complete |
+| P2 | Distributed Coordination | openclaws | ✅ Complete |
+| P3 | HA/Recovery | openclaws | ✅ Complete |
+| P3.5 | Distributed Recovery | openclaws | ✅ Complete |
+| P4 | Memory Library | openclaws | ✅ Complete |
+| P5 | Network Substrate | openclaws | ✅ Complete |
+| P6 | Host Adapters | host-adapters | ✅ v0.3+ |
+| P6.5 | Schema Hardening | host-adapters | ✅ v0.4+ |
+| P7 | Agent SDK | host-adapters | ✅ v0.4+ |
+| P8 | Policy Engine | host-adapters | ✅ v0.5.0 |
 
 ## License
 
