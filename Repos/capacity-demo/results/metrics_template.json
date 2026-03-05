@@ -1,0 +1,15 @@
+{
+  "fit_error": 0.0123,
+  "eps_fit": 0.05,
+  "overlap_delta_max": 0.021,
+  "k_glue": 1.0,
+  "N_geo": 256,
+  "lambda1": 15.23,
+  "uv_min_lambda1": 5.0,
+  "uv_max_lambda1": 50.0,
+  "lambda_int": 120.0,
+  "uv_min_lambda_int": 20.0,
+  "uv_max_lambda_int": 200.0,
+  "isolation_metric": 0.03,
+  "isolation_eps": 0.05
+}

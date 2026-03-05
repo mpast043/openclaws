@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "socket": {
+    "path": "/Users/meganpastore/Clawdbot/.openclaw/exec-approvals.sock",
+    "token": "6v60rkeBaCNGsRUB-6IoChHC_T_jnW1k"
+  },
+  "defaults": {},
+  "agents": {}
+}

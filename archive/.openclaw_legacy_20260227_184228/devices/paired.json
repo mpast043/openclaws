@@ -1,0 +1,60 @@
+{
+  "f7fe7c22bbf7ed45322e37e85494de032f01ec034964209197a279a58650c517": {
+    "deviceId": "f7fe7c22bbf7ed45322e37e85494de032f01ec034964209197a279a58650c517",
+    "publicKey": "ZhmJ9oQ3hDm5AAIODGRUV7mrj4J0RGsa9VAdmD3CZ9o",
+    "platform": "darwin",
+    "clientId": "gateway-client",
+    "clientMode": "backend",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.admin",
+      "operator.read"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "RKEAJLWXBbYQMBrzFLIknViOc995DqjVkWh7KynFv_4",
+        "role": "operator",
+        "scopes": [
+          "operator.admin"
+        ],
+        "createdAtMs": 1771628395904
+      }
+    },
+    "createdAtMs": 1771628395904,
+    "approvedAtMs": 1771628395904
+  },
+  "3aeaaaf59c06d8aabb2df9652b4121647149473b9936e803adfe0a83a7c7dc14": {
+    "deviceId": "3aeaaaf59c06d8aabb2df9652b4121647149473b9936e803adfe0a83a7c7dc14",
+    "publicKey": "GrNmzGs5zov7iR7uF1MxXb_VJyf4bPVXDjl2vUog7dU",
+    "platform": "MacIntel",
+    "clientId": "openclaw-control-ui",
+    "clientMode": "webchat",
+    "role": "operator",
+    "roles": [
+      "operator"
+    ],
+    "scopes": [
+      "operator.admin",
+      "operator.approvals",
+      "operator.pairing"
+    ],
+    "tokens": {
+      "operator": {
+        "token": "_Tph1voKVzh1kik8qZxEGdnKFBiv2TxrzGz1_EBST5E",
+        "role": "operator",
+        "scopes": [
+          "operator.admin",
+          "operator.approvals",
+          "operator.pairing"
+        ],
+        "createdAtMs": 1771628445446,
+        "lastUsedAtMs": 1771699441199
+      }
+    },
+    "createdAtMs": 1771628445445,
+    "approvedAtMs": 1771628445445
+  }
+}

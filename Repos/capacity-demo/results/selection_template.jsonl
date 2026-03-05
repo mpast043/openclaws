@@ -1,0 +1,1 @@
+{"accessible": ["feat_A", "feat_B", "feat_C", "feat_D"], "selected": ["feat_A", "feat_C"], "committed": ["feat_A"], "ptr": {"feat_A": 0.93, "feat_C": 0.81}, "theta_ptr": 0.8, "truth": {"feat_A": true, "feat_C": false}}

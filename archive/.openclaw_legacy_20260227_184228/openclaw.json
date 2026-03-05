@@ -1,0 +1,273 @@
+{
+  "agents": {
+    "defaults": {
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "model": {
+        "primary": "ollama/qwen3-coder-next"
+      },
+      "models": {
+        "custom-127-0-0-1-11434/kimi-k2.5:cloud": {
+          "alias": "KIMI"
+        },
+        "openai/gpt-5.1-codex": {
+          "alias": "GPT"
+        }
+      },
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "workspace": "/Users/meganpastore/Clawdbot"
+    }
+  },
+  "channels": {
+    "whatsapp": {
+      "allowFrom": [
+        "+15707514200"
+      ],
+      "capabilities": [],
+      "debounceMs": 0,
+      "dmPolicy": "allowlist",
+      "groupPolicy": "allowlist",
+      "mediaMaxMb": 50,
+      "selfChatMode": true
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "ownerDisplay": "raw",
+    "restart": true
+  },
+  "env": {
+    "shellEnv": {
+      "enabled": false,
+      "timeoutMs": 5
+    }
+  },
+  "gateway": {
+    "auth": {
+      "mode": "token",
+      "token": "b581d6e0630eeb9afe3a5d194d51cf598e17512ea2d07d33"
+    },
+    "bind": "loopback",
+    "mode": "local",
+    "port": 18789,
+    "remote": {
+      "token": "750336a364fe2d80fb9d25cabf17c58aaf301a2a61f22cf6"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "meta": {
+    "lastTouchedAt": "2026-02-21T18:43:36.766Z",
+    "lastTouchedVersion": "2026.2.21-2"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "Ollama-local": {
+        "api": "openai-completions",
+        "apiKey": "ollama",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "models": [
+          {
+            "contextWindow": 64000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "kimi-2.5:cloud",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 64000,
+            "name": "kimi-2.5:cloud",
+            "reasoning": true
+          },
+          {
+            "api": "ollama",
+            "contextWindow": 64000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "qwen3.5:cloud",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 64000,
+            "name": "qwen3.5:cloud",
+            "reasoning": true
+          }
+        ]
+      },
+      "custom-127-0-0-1-11434": {
+        "api": "openai-completions",
+        "apiKey": "ollama",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "models": [
+          {
+            "contextWindow": 64000,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "kimi-k2.5:cloud",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 64000,
+            "name": "kimi-k2.5:cloud (Custom Provider)",
+            "reasoning": false
+          }
+        ]
+      },
+      "ollama": {
+        "api": "openai-completions",
+        "apiKey": "ollama-local",
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "models": [
+          {
+            "contextWindow": 131072,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "qwen3-coder-next",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 16384,
+            "name": "qwen3-coder-next",
+            "reasoning": false
+          },
+          {
+            "contextWindow": 131072,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "qwen3.5:cloud",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 16384,
+            "name": "qwen3.5:cloud",
+            "reasoning": false
+          },
+          {
+            "contextWindow": 131072,
+            "cost": {
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "input": 0,
+              "output": 0
+            },
+            "id": "kimi-k2.5:cloud",
+            "input": [
+              "text"
+            ],
+            "maxTokens": 16384,
+            "name": "kimi-k2.5:cloud",
+            "reasoning": false
+          }
+        ]
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      }
+    }
+  },
+  "skills": {
+    "allowBundled": [],
+    "entries": {
+      "clawdbot-framework": {
+        "enabled": false
+      },
+      "clawhub": {
+        "enabled": true
+      },
+      "coding-agent": {
+        "enabled": true
+      },
+      "github": {
+        "enabled": true
+      },
+      "healthcheck": {
+        "enabled": true
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": true
+      },
+      "session-logs": {
+        "enabled": false
+      },
+      "skill-creator": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      }
+    },
+    "install": {
+      "nodeManager": "npm",
+      "preferBrew": false
+    }
+  },
+  "tools": {
+    "agentToAgent": {
+      "allow": [
+        ""
+      ]
+    }
+  },
+  "ui": {
+    "assistant": {
+      "name": "claw"
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-21T18:12:01.213Z",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local",
+    "lastRunVersion": "2026.2.21-2"
+  }
+}
